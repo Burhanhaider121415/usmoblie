@@ -13,7 +13,7 @@ import RightActionPanel from "./components/RightActionPanel";
 import Dashboard from "./components/Dashboard";
 import FavoritesPanel from "./components/FavoritesPanel";
 
-type View = "dashboard" | "search" | "playbook" | "category" | "favorites" | "templates";
+type View = "dashboard" | "search" | "playbook" | "category" | "favorites";
 
 export default function App() {
   const [view, setView] = useState<View>("dashboard");
@@ -22,7 +22,7 @@ export default function App() {
   const [mobileTab, setMobileTab] = useState("search");
   const [isMobile, setIsMobile] = useState(false);
 
-  const { query, setQuery, mode, setMode, results } = useSearch(playbooks);
+  const { query, setQuery, showAll, setShowAll, bestMatch, relatedResults, totalCount } = useSearch(playbooks);
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
   const { recentlyUsed, addRecent } = useRecentlyUsed();
 
@@ -42,21 +42,23 @@ export default function App() {
         const input = document.getElementById("command-search-input") as HTMLInputElement;
         if (input) {
           input.focus();
-          setView("search");
+          if (view !== "search") setView("search");
         }
       }
       // Escape to go back
       if (e.key === "Escape") {
-        if (selectedPlaybookId) {
-          setSelectedPlaybookId(null);
-        } else if (query) {
+        if (query) {
           setQuery("");
+          setView("dashboard");
+        } else if (selectedPlaybookId) {
+          setSelectedPlaybookId(null);
+          setView("dashboard");
         }
       }
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [selectedPlaybookId, query, setQuery]);
+  }, [selectedPlaybookId, query, setQuery, view]);
 
   // Selected playbook object
   const selectedPlaybook = useMemo(
@@ -70,21 +72,22 @@ export default function App() {
     [activeCategory]
   );
 
-  // Extract search result playbooks
-  const resultPlaybooks = useMemo(
-    () => results.map((r) => r.playbook),
-    [results]
-  );
+  // ── Handlers ──────────────────────────────────────────────
 
-  // Handlers
+  const handleGoHome = useCallback(() => {
+    setView("dashboard");
+    setSelectedPlaybookId(null);
+    setActiveCategory(null);
+    setQuery("");
+    setShowAll(false);
+  }, [setQuery, setShowAll]);
+
   const handleSelectPlaybook = useCallback(
     (id: string) => {
       setSelectedPlaybookId(id);
       addRecent(id);
       setView("playbook");
-      if (isMobile) {
-        setMobileTab("search");
-      }
+      if (isMobile) setMobileTab("search");
     },
     [addRecent, isMobile]
   );
@@ -99,31 +102,31 @@ export default function App() {
     [activeCategory, setQuery]
   );
 
-  const handleSearch = useCallback(
-    (q: string) => {
-      setQuery(q);
-      if (q) {
-        setView("search");
-        setActiveCategory(null);
-      }
-    },
-    [setQuery]
-  );
-
   const handleQueryChange = useCallback(
     (q: string) => {
       setQuery(q);
+      setShowAll(false);
       if (q) {
         setView("search");
         setSelectedPlaybookId(null);
         setActiveCategory(null);
-      } else if (!selectedPlaybookId) {
+      } else {
         setView("dashboard");
       }
     },
-    [setQuery, selectedPlaybookId]
+    [setQuery, setShowAll]
   );
 
+  const handleBack = useCallback(() => {
+    setSelectedPlaybookId(null);
+    if (query) {
+      setView("search");
+    } else if (activeCategory) {
+      setView("category");
+    } else {
+      setView("dashboard");
+    }
+  }, [query, activeCategory]);
 
   const handleMobileTabChange = useCallback(
     (tab: string) => {
@@ -135,7 +138,6 @@ export default function App() {
       } else if (tab === "saved") {
         setView("favorites");
       } else if (tab === "templates") {
-        setView("templates");
         handleSelectPlaybook("empathy-replies");
       }
     },
@@ -148,20 +150,14 @@ export default function App() {
     if (view === "playbook" && selectedPlaybook) {
       return (
         <div className="px-4 py-4 lg:px-6">
-          <button
-            onClick={() => {
-              setSelectedPlaybookId(null);
-              setView(query ? "search" : activeCategory ? "category" : "dashboard");
-            }}
-            className="mb-4 text-sm text-[#94a3b8] hover:text-[#00d4ff] transition-colors flex items-center gap-1"
-          >
-            ← Back
-          </button>
           <PlaybookDetail
             playbook={selectedPlaybook}
             onToggleFavorite={toggleFavorite}
             isFavorite={isFavorite(selectedPlaybook.id)}
             onSelectRelated={handleSelectPlaybook}
+            onBack={handleBack}
+            onBackToStart={handleGoHome}
+            showMobileActions={isMobile}
           />
         </div>
       );
@@ -174,14 +170,16 @@ export default function App() {
           <CommandSearch
             query={query}
             onQueryChange={handleQueryChange}
-            mode={mode}
-            onModeToggle={setMode}
+            autoFocus
           />
           <div className="mt-4">
             <SearchResults
-              results={resultPlaybooks}
+              bestMatch={bestMatch}
+              relatedResults={relatedResults}
+              totalCount={totalCount}
+              showAll={showAll}
+              onShowAllToggle={() => setShowAll(!showAll)}
               query={query}
-              mode={mode}
               onSelectPlaybook={handleSelectPlaybook}
               onToggleFavorite={toggleFavorite}
               favorites={favorites}
@@ -199,8 +197,6 @@ export default function App() {
           <CommandSearch
             query={query}
             onQueryChange={handleQueryChange}
-            mode={mode}
-            onModeToggle={setMode}
           />
           <div className="mt-4">
             <h2 className="text-lg font-bold text-[#f1f5f9] mb-3 flex items-center gap-2">
@@ -210,10 +206,43 @@ export default function App() {
                 ({categoryPlaybooks.length})
               </span>
             </h2>
+
+            {/* Empty category state (#5) */}
             {categoryPlaybooks.length === 0 ? (
-              <p className="text-[#4a5568] text-sm">
-                No playbooks in this category yet.
-              </p>
+              <div className="rounded-xl bg-[#1a1d27] border border-[#2a2e3d] p-6 text-center space-y-4">
+                <p className="text-sm text-[#94a3b8]">
+                  No playbooks added to <span className="font-semibold text-[#f1f5f9]">{cat?.label}</span> yet.
+                </p>
+                <p className="text-xs text-[#4a5568]">
+                  This is dummy prototype content. Real playbooks will be added later.
+                </p>
+                <div className="flex flex-wrap justify-center gap-2 pt-2">
+                  <button
+                    onClick={handleGoHome}
+                    className="px-3 py-1.5 text-xs rounded-full bg-[#242837] text-[#94a3b8] hover:text-[#00d4ff] hover:bg-[#2a2e3d] transition-colors border border-[#2a2e3d]"
+                  >
+                    ← Go to Start Here
+                  </button>
+                  <button
+                    onClick={() => handleSelectPlaybook("esim-activation")}
+                    className="px-3 py-1.5 text-xs rounded-full bg-[#242837] text-[#94a3b8] hover:text-[#00d4ff] hover:bg-[#2a2e3d] transition-colors border border-[#2a2e3d]"
+                  >
+                    eSIM Activation Issue
+                  </button>
+                  <button
+                    onClick={() => handleSelectPlaybook("port-in-delay")}
+                    className="px-3 py-1.5 text-xs rounded-full bg-[#242837] text-[#94a3b8] hover:text-[#00d4ff] hover:bg-[#2a2e3d] transition-colors border border-[#2a2e3d]"
+                  >
+                    Port-In Delay
+                  </button>
+                  <button
+                    onClick={() => handleSelectPlaybook("escalation-format")}
+                    className="px-3 py-1.5 text-xs rounded-full bg-[#242837] text-[#94a3b8] hover:text-[#00d4ff] hover:bg-[#2a2e3d] transition-colors border border-[#2a2e3d]"
+                  >
+                    Escalation Format
+                  </button>
+                </div>
+              </div>
             ) : (
               <div className="space-y-2">
                 {categoryPlaybooks.map((pb) => (
@@ -223,7 +252,7 @@ export default function App() {
                     className="w-full text-left bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-4 hover:bg-[#242837] hover:border-[#3a3e4d] transition-all group"
                   >
                     <div className="flex items-start justify-between">
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <h3 className="text-sm font-semibold text-[#f1f5f9] group-hover:text-[#00d4ff] transition-colors">
                           {pb.title}
                         </h3>
@@ -236,13 +265,14 @@ export default function App() {
                           e.stopPropagation();
                           toggleFavorite(pb.id);
                         }}
-                        className="flex-shrink-0 ml-2 text-sm"
+                        className={`flex-shrink-0 ml-2 text-lg transition-colors ${
+                          isFavorite(pb.id)
+                            ? "text-amber-400 hover:text-amber-300"
+                            : "text-[#4a5568] hover:text-amber-400"
+                        }`}
+                        title={isFavorite(pb.id) ? "Unpin playbook" : "Pin playbook"}
                       >
-                        {isFavorite(pb.id) ? (
-                          <span className="text-amber-400">★</span>
-                        ) : (
-                          <span className="text-[#4a5568] hover:text-amber-400">☆</span>
-                        )}
+                        {isFavorite(pb.id) ? "★" : "☆"}
                       </button>
                     </div>
                   </button>
@@ -270,15 +300,13 @@ export default function App() {
     // Dashboard (default)
     return (
       <Dashboard
+        query={query}
+        onQueryChange={handleQueryChange}
         onSelectPlaybook={handleSelectPlaybook}
-        onSearch={(q) => {
-          handleSearch(q);
-          setTimeout(() => {
-            const input = document.getElementById("command-search-input") as HTMLInputElement;
-            if (input) input.focus();
-          }, 100);
-        }}
         recentIds={recentlyUsed}
+        favorites={favorites}
+        onToggleFavorite={toggleFavorite}
+        isFavorite={isFavorite}
       />
     );
   };
@@ -301,6 +329,7 @@ export default function App() {
         categories={categories}
         activeCategory={activeCategory}
         onCategorySelect={handleCategorySelect}
+        onLogoClick={handleGoHome}
         favorites={favorites}
         recentlyUsed={recentlyUsed}
       />
@@ -311,7 +340,10 @@ export default function App() {
       </main>
 
       {/* Right Action Panel */}
-      <RightActionPanel playbook={selectedPlaybook} />
+      <RightActionPanel
+        playbook={selectedPlaybook}
+        onSelectPlaybook={handleSelectPlaybook}
+      />
     </div>
   );
 }

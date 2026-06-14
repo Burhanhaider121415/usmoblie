@@ -1,13 +1,17 @@
 import type { Playbook } from "../types/playbook";
 import { playbooks } from "../data/playbooks";
+import CommandSearch from "./CommandSearch";
 
 interface DashboardProps {
+  query: string;
+  onQueryChange: (q: string) => void;
   onSelectPlaybook: (id: string) => void;
-  onSearch: (query: string) => void;
   recentIds: string[];
+  favorites: string[];
+  onToggleFavorite: (id: string) => void;
+  isFavorite: (id: string) => boolean;
 }
 
-const pinnedIds = ["apn-iphone", "no-service", "esim-activation", "port-in-delay", "escalation-format"];
 const commonIssueIds = ["mobile-data-not-working", "no-service", "esim-activation", "hotspot-not-working", "qci-priority"];
 
 function getPlaybook(id: string): Playbook | undefined {
@@ -15,66 +19,117 @@ function getPlaybook(id: string): Playbook | undefined {
 }
 
 export default function Dashboard({
+  query,
+  onQueryChange,
   onSelectPlaybook,
-  onSearch,
   recentIds,
+  favorites,
+  onToggleFavorite,
+  isFavorite,
 }: DashboardProps) {
   const recentPlaybooks = recentIds
     .map((id) => getPlaybook(id))
     .filter(Boolean) as Playbook[];
 
+  const favoritePlaybooks = favorites
+    .map((id) => getPlaybook(id))
+    .filter(Boolean) as Playbook[];
+
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
-      {/* Hero */}
-      <div className="text-center space-y-3">
+    <div className="max-w-3xl mx-auto px-4 py-8 space-y-6">
+      {/* 1. Hero */}
+      <div className="text-center space-y-2">
         <h1 className="text-3xl md:text-4xl font-bold text-[#f1f5f9]">
           <span className="text-[#00d4ff]">Signal</span> Desk
         </h1>
-        <p className="text-[#94a3b8] text-sm md:text-base">
-          Fast searchable support playbooks for live customer help.
+        <p className="text-[#94a3b8] text-sm">
+          Where do you need help right now?
         </p>
       </div>
 
-      {/* Search hint */}
-      <div className="text-center">
-        <button
-          onClick={() => onSearch("")}
-          className="inline-flex items-center gap-2 bg-[#242837] border border-[#2a2e3d] rounded-xl px-6 py-3 text-[#4a5568] hover:border-[#00d4ff]/30 hover:text-[#94a3b8] transition-all text-sm cursor-text w-full max-w-md"
-        >
-          <span className="text-lg">🔍</span>
-          <span>Search APN, QCI, eSIM, port delay, no service…</span>
-          <span className="ml-auto text-xs bg-[#1a1d27] px-2 py-0.5 rounded font-mono hidden md:inline">
-            Ctrl+K
-          </span>
-        </button>
-      </div>
+      {/* 2. Real Search Bar */}
+      <CommandSearch
+        query={query}
+        onQueryChange={onQueryChange}
+        autoFocus={false}
+      />
 
-      {/* Pinned Playbooks */}
-      <section>
-        <h2 className="text-xs uppercase tracking-widest text-[#4a5568] font-semibold mb-3">
-          📌 Pinned Playbooks
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-          {pinnedIds.map((id) => {
-            const pb = getPlaybook(id);
-            if (!pb) return null;
-            return (
+      {/* 3. Pinned / Favorites */}
+      {favoritePlaybooks.length > 0 && (
+        <section>
+          <h2 className="text-xs uppercase tracking-widest text-[#4a5568] font-semibold mb-3">
+            ⭐ Pinned Playbooks
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            {favoritePlaybooks.map((pb) => (
               <button
-                key={id}
-                onClick={() => onSelectPlaybook(id)}
-                className="bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-3 text-left hover:bg-[#242837] hover:border-[#00d4ff]/20 transition-all group"
+                key={pb.id}
+                onClick={() => onSelectPlaybook(pb.id)}
+                className="bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-3 text-left hover:bg-[#242837] hover:border-[#00d4ff]/20 transition-all group relative"
               >
-                <div className="text-sm font-medium text-[#f1f5f9] group-hover:text-[#00d4ff] transition-colors">
+                <div className="text-sm font-medium text-[#f1f5f9] group-hover:text-[#00d4ff] transition-colors pr-5">
                   {pb.title}
                 </div>
                 <div className="text-xs text-[#4a5568] mt-1">{pb.category}</div>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onToggleFavorite(pb.id);
+                  }}
+                  className="absolute top-2 right-2 text-amber-400 hover:text-amber-300 text-sm"
+                  title="Unpin playbook"
+                >
+                  ★
+                </button>
               </button>
-            );
-          })}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      )}
 
-      {/* Common Live Issues */}
+      {/* No favorites yet — show defaults */}
+      {favoritePlaybooks.length === 0 && (
+        <section>
+          <h2 className="text-xs uppercase tracking-widest text-[#4a5568] font-semibold mb-3">
+            📌 Suggested Playbooks
+          </h2>
+          <p className="text-xs text-[#4a5568] mb-2">
+            Star any playbook to pin it here for quick access.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            {["apn-iphone", "no-service", "esim-activation", "port-in-delay", "escalation-format"].map((id) => {
+              const pb = getPlaybook(id);
+              if (!pb) return null;
+              return (
+                <button
+                  key={id}
+                  onClick={() => onSelectPlaybook(id)}
+                  className="bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-3 text-left hover:bg-[#242837] hover:border-[#00d4ff]/20 transition-all group relative"
+                >
+                  <div className="text-sm font-medium text-[#f1f5f9] group-hover:text-[#00d4ff] transition-colors pr-5">
+                    {pb.title}
+                  </div>
+                  <div className="text-xs text-[#4a5568] mt-1">{pb.category}</div>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleFavorite(id);
+                    }}
+                    className="absolute top-2 right-2 text-[#4a5568] hover:text-amber-400 text-sm transition-colors"
+                    title="Pin playbook"
+                  >
+                    ☆
+                  </button>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {/* 4. Common Live Issues */}
       <section>
         <h2 className="text-xs uppercase tracking-widest text-[#4a5568] font-semibold mb-3">
           🔥 Common Live Issues
@@ -89,7 +144,7 @@ export default function Dashboard({
                 onClick={() => onSelectPlaybook(id)}
                 className="w-full bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-3 text-left hover:bg-[#242837] hover:border-[#3a3e4d] transition-all group flex items-center justify-between"
               >
-                <div>
+                <div className="flex-1 min-w-0">
                   <span className="text-sm font-medium text-[#f1f5f9] group-hover:text-[#00d4ff] transition-colors">
                     {pb.title}
                   </span>
@@ -97,24 +152,41 @@ export default function Dashboard({
                     {pb.quickAnswer}
                   </p>
                 </div>
-                {pb.priority === "critical" && (
-                  <span className="text-xs bg-red-500/10 text-red-400 px-2 py-0.5 rounded-full font-medium shrink-0 ml-2">
-                    Critical
-                  </span>
-                )}
-                {pb.priority === "important" && (
-                  <span className="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded-full font-medium shrink-0 ml-2">
-                    Important
-                  </span>
-                )}
-                <span className="text-[#4a5568] text-sm ml-2 group-hover:text-[#94a3b8]">→</span>
+                <div className="flex items-center gap-2 ml-2 flex-shrink-0">
+                  {pb.priority === "critical" && (
+                    <span className="text-xs bg-red-500/10 text-red-400 px-2 py-0.5 rounded-full font-medium">
+                      Critical
+                    </span>
+                  )}
+                  {pb.priority === "important" && (
+                    <span className="text-xs bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded-full font-medium">
+                      Important
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleFavorite(id);
+                    }}
+                    className={`text-sm transition-colors ${
+                      isFavorite(id)
+                        ? "text-amber-400 hover:text-amber-300"
+                        : "text-[#4a5568] hover:text-amber-400"
+                    }`}
+                    title={isFavorite(id) ? "Unpin playbook" : "Pin playbook"}
+                  >
+                    {isFavorite(id) ? "★" : "☆"}
+                  </button>
+                  <span className="text-[#4a5568] text-sm group-hover:text-[#94a3b8]">→</span>
+                </div>
               </button>
             );
           })}
         </div>
       </section>
 
-      {/* Quick Tools */}
+      {/* 5. Quick Tools */}
       <section>
         <h2 className="text-xs uppercase tracking-widest text-[#4a5568] font-semibold mb-3">
           ⚡ Quick Tools
@@ -134,24 +206,10 @@ export default function Dashboard({
             <div className="text-sm font-medium text-[#f1f5f9]">💬 Reply Templates</div>
             <div className="text-xs text-[#4a5568] mt-1">Empathy & professional replies</div>
           </button>
-          <button
-            onClick={() => onSearch("glossary")}
-            className="bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-3 text-left hover:bg-[#242837] transition-all"
-          >
-            <div className="text-sm font-medium text-[#f1f5f9]">📖 Glossary</div>
-            <div className="text-xs text-[#4a5568] mt-1">Technical terms & definitions</div>
-          </button>
-          <button
-            onClick={() => onSearch("checklist")}
-            className="bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-3 text-left hover:bg-[#242837] transition-all"
-          >
-            <div className="text-sm font-medium text-[#f1f5f9]">✅ Customer Info Checklist</div>
-            <div className="text-xs text-[#4a5568] mt-1">Standard info gathering</div>
-          </button>
         </div>
       </section>
 
-      {/* Recently Used */}
+      {/* 6. Recently Used */}
       {recentPlaybooks.length > 0 && (
         <section>
           <h2 className="text-xs uppercase tracking-widest text-[#4a5568] font-semibold mb-3">
@@ -162,9 +220,24 @@ export default function Dashboard({
               <button
                 key={pb.id}
                 onClick={() => onSelectPlaybook(pb.id)}
-                className="w-full bg-[#1a1d27] border border-[#2a2e3d] rounded-lg px-3 py-2.5 text-left hover:bg-[#242837] transition-all text-sm text-[#94a3b8] hover:text-[#f1f5f9]"
+                className="w-full bg-[#1a1d27] border border-[#2a2e3d] rounded-lg px-3 py-2.5 text-left hover:bg-[#242837] transition-all text-sm text-[#94a3b8] hover:text-[#f1f5f9] flex items-center justify-between"
               >
-                {pb.title}
+                <span>{pb.title}</span>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onToggleFavorite(pb.id);
+                  }}
+                  className={`text-sm transition-colors flex-shrink-0 ml-2 ${
+                    isFavorite(pb.id)
+                      ? "text-amber-400 hover:text-amber-300"
+                      : "text-[#4a5568] hover:text-amber-400"
+                  }`}
+                  title={isFavorite(pb.id) ? "Unpin playbook" : "Pin playbook"}
+                >
+                  {isFavorite(pb.id) ? "★" : "☆"}
+                </button>
               </button>
             ))}
           </div>

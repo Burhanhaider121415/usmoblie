@@ -1,4 +1,5 @@
 import type { Playbook } from "../types/playbook";
+import { playbooks } from "../data/playbooks";
 import CopyButton from "./CopyButton";
 import IntentBadge from "./IntentBadge";
 import PriorityBadge from "./PriorityBadge";
@@ -9,20 +10,51 @@ interface PlaybookDetailProps {
   onToggleFavorite: (id: string) => void;
   isFavorite: boolean;
   onSelectRelated: (id: string) => void;
+  onBackToStart: () => void;
+  onBack: () => void;
+  showMobileActions?: boolean;
 }
 
-const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
+// Check if a related playbook ID actually exists in data
+function playbookExists(id: string): Playbook | undefined {
+  return playbooks.find((p) => p.id === id);
+}
+
+export default function PlaybookDetail({
   playbook,
   onToggleFavorite,
   isFavorite,
   onSelectRelated,
-}) => {
+  onBackToStart,
+  onBack,
+  showMobileActions = false,
+}: PlaybookDetailProps) {
+  const validRelated = playbook.relatedPlaybooks
+    .map((id) => ({ id, pb: playbookExists(id) }))
+    .filter((r) => r.pb != null);
 
   return (
     <div
       id="playbook-detail"
       className="space-y-4 overflow-y-auto pb-8"
     >
+      {/* ── Back Navigation ────────────────────────────────────── */}
+      <div className="flex items-center gap-3">
+        <button
+          onClick={onBack}
+          className="text-sm text-[#94a3b8] hover:text-[#00d4ff] transition-colors flex items-center gap-1"
+        >
+          ← Back
+        </button>
+        <span className="text-[#2a2e3d]">|</span>
+        <button
+          onClick={onBackToStart}
+          className="text-sm text-[#94a3b8] hover:text-[#00d4ff] transition-colors"
+        >
+          Start Here
+        </button>
+      </div>
+
       {/* ── Header ─────────────────────────────────────────────── */}
       <div id="playbook-detail-header">
         <div className="flex items-start justify-between gap-3">
@@ -33,18 +65,21 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
             {playbook.title}
           </h1>
 
+          {/* Star/Favorite — prominent */}
           <button
             id="playbook-detail-favorite-btn"
             type="button"
             onClick={() => onToggleFavorite(playbook.id)}
-            className="mt-1 flex-shrink-0 text-xl transition-colors hover:scale-110"
-            aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+            className={`
+              mt-0.5 flex-shrink-0 text-2xl transition-all hover:scale-110
+              ${isFavorite
+                ? "text-amber-400 drop-shadow-[0_0_4px_rgba(251,191,36,0.4)]"
+                : "text-[#4a5568] hover:text-amber-400"
+              }
+            `}
+            title={isFavorite ? "Unpin playbook" : "Pin playbook"}
           >
-            {isFavorite ? (
-              <span className="text-amber-400">★</span>
-            ) : (
-              <span className="text-[#4a5568] hover:text-amber-400">☆</span>
-            )}
+            {isFavorite ? "★" : "☆"}
           </button>
         </div>
 
@@ -74,16 +109,12 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
             </span>
           )}
           {playbook.confidence === "dummy" && (
-            <span
-              id="playbook-detail-confidence-badge"
-              className="rounded-full bg-amber-500/15 px-2 py-0.5 text-xs font-medium text-amber-400"
-            >
+            <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-xs font-medium text-amber-400">
               Dummy Data
             </span>
           )}
           {playbook.confidence && playbook.confidence !== "dummy" && (
             <span
-              id="playbook-detail-confidence-badge"
               className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                 playbook.confidence === "verified"
                   ? "bg-green-500/15 text-green-400"
@@ -98,10 +129,7 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
       </div>
 
       {/* ── Quick Answer ───────────────────────────────────────── */}
-      <section
-        id="playbook-detail-quick-answer"
-        className="rounded-xl bg-[#242837] p-4"
-      >
+      <section className="rounded-xl bg-[#242837] p-4">
         <h2 className="mb-2 text-sm font-semibold uppercase text-[#00d4ff]">
           ⚡ Quick Answer
         </h2>
@@ -109,10 +137,7 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
       </section>
 
       {/* ── Use When ───────────────────────────────────────────── */}
-      <section
-        id="playbook-detail-use-when"
-        className="rounded-xl bg-[#242837] p-4"
-      >
+      <section className="rounded-xl bg-[#242837] p-4">
         <h2 className="mb-2 text-sm font-semibold text-[#f1f5f9]">
           📋 Use When
         </h2>
@@ -126,10 +151,7 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
       </section>
 
       {/* ── Ask Customer First ─────────────────────────────────── */}
-      <section
-        id="playbook-detail-customer-questions"
-        className="rounded-xl bg-[#242837] p-4"
-      >
+      <section className="rounded-xl bg-[#242837] p-4">
         <h2 className="mb-3 text-sm font-semibold text-[#f1f5f9]">
           ❓ Ask Customer First
         </h2>
@@ -137,7 +159,6 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
           {playbook.customerQuestions.map((question, idx) => (
             <li
               key={idx}
-              id={`playbook-detail-question-${idx}`}
               className="flex items-start gap-2"
             >
               <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#0f1117] font-mono text-xs font-bold text-[#00d4ff]">
@@ -146,30 +167,20 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
               <span className="flex-1 text-sm text-[#f1f5f9]">
                 {question}
               </span>
-              <CopyButton
-                id={`playbook-detail-copy-question-${idx}`}
-                text={question}
-              />
+              <CopyButton text={question} label="Copy" size="sm" />
             </li>
           ))}
         </ol>
       </section>
 
       {/* ── Quick Steps ────────────────────────────────────────── */}
-      <section
-        id="playbook-detail-quick-steps"
-        className="rounded-xl bg-[#242837] p-4"
-      >
+      <section className="rounded-xl bg-[#242837] p-4">
         <h2 className="mb-3 text-sm font-semibold text-[#f1f5f9]">
           📝 Quick Steps
         </h2>
         <ol className="space-y-2">
           {playbook.quickSteps.map((step, idx) => (
-            <li
-              key={idx}
-              id={`playbook-detail-step-${idx}`}
-              className="flex items-start gap-3"
-            >
+            <li key={idx} className="flex items-start gap-3">
               <span className="font-mono font-bold text-[#00d4ff]">
                 {String(idx + 1).padStart(2, "0")}
               </span>
@@ -181,31 +192,25 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
 
       {/* ── Device-Specific Steps ──────────────────────────────── */}
       {playbook.deviceSpecificSteps && (
-        <section id="playbook-detail-device-steps">
+        <section>
           <DeviceStepsTabs deviceSpecificSteps={playbook.deviceSpecificSteps} />
         </section>
       )}
 
       {/* ── Copy Templates ─────────────────────────────────────── */}
-      <section
-        id="playbook-detail-copy-templates"
-        className="rounded-xl bg-[#242837] p-4"
-      >
+      <section className="rounded-xl bg-[#242837] p-4">
         <h2 className="mb-3 text-sm font-semibold text-[#f1f5f9]">
           💬 Copy Templates
         </h2>
         <div className="space-y-3">
           {playbook.copyTemplates.map((template, idx) => (
-            <div key={idx} id={`playbook-detail-template-${idx}`}>
-              <p className="mb-1 text-sm text-[#94a3b8]">{template.label}</p>
-              <div className="flex items-start gap-2">
-                <div className="flex-1 rounded-lg bg-[#0f1117] p-3 font-mono text-sm text-[#f1f5f9]">
-                  {template.text}
-                </div>
-                <CopyButton
-                  id={`playbook-detail-copy-template-${idx}`}
-                  text={template.text}
-                />
+            <div key={idx}>
+              <p className="mb-1 text-sm font-medium text-[#94a3b8]">{template.label}</p>
+              <div className="rounded-lg bg-[#0f1117] p-3 font-mono text-sm text-[#f1f5f9]">
+                {template.text}
+              </div>
+              <div className="mt-2 flex justify-end">
+                <CopyButton text={template.text} label="Copy Reply" />
               </div>
             </div>
           ))}
@@ -213,10 +218,7 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
       </section>
 
       {/* ── Escalate If ────────────────────────────────────────── */}
-      <section
-        id="playbook-detail-escalate-if"
-        className="rounded-xl border border-red-500/20 bg-[#242837] p-4"
-      >
+      <section className="rounded-xl border border-red-500/20 bg-[#242837] p-4">
         <h2 className="mb-3 text-sm font-semibold text-red-400">
           🚨 Escalate If
         </h2>
@@ -224,7 +226,6 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
           {playbook.escalationRequiredWhen.map((item, idx) => (
             <li
               key={idx}
-              id={`playbook-detail-escalation-item-${idx}`}
               className="flex items-start gap-2 text-sm text-[#f1f5f9]"
             >
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-400" />
@@ -236,10 +237,7 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
 
       {/* ── Escalation Format ──────────────────────────────────── */}
       {playbook.escalationFormat && playbook.escalationFormat.length > 0 && (
-        <section
-          id="playbook-detail-escalation-format"
-          className="rounded-xl bg-[#242837] p-4"
-        >
+        <section className="rounded-xl bg-[#242837] p-4">
           <h2 className="mb-3 text-sm font-semibold text-[#f1f5f9]">
             📋 Escalation Format
           </h2>
@@ -248,9 +246,8 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
               {playbook.escalationFormat.join("\n")}
             </pre>
           </div>
-          <div className="mt-3 flex justify-end">
+          <div className="mt-3">
             <CopyButton
-              id="playbook-detail-copy-escalation-format"
               text={playbook.escalationFormat.join("\n")}
               label="Copy Escalation Format"
               size="lg"
@@ -259,32 +256,83 @@ const PlaybookDetail: React.FC<PlaybookDetailProps> = ({
         </section>
       )}
 
-      {/* ── Related Playbooks ──────────────────────────────────── */}
-      {playbook.relatedPlaybooks.length > 0 && (
-        <section
-          id="playbook-detail-related"
-          className="rounded-xl bg-[#242837] p-4"
-        >
+      {/* ── Related Playbooks (only existing ones) ─────────────── */}
+      {validRelated.length > 0 && (
+        <section className="rounded-xl bg-[#242837] p-4">
           <h2 className="mb-3 text-sm font-semibold text-[#f1f5f9]">
             🔗 Related Playbooks
           </h2>
           <div className="flex flex-wrap gap-2">
-            {playbook.relatedPlaybooks.map((relatedId) => (
+            {validRelated.map(({ id, pb }) => (
               <button
-                key={relatedId}
-                id={`playbook-detail-related-${relatedId}`}
+                key={id}
                 type="button"
-                onClick={() => onSelectRelated(relatedId)}
+                onClick={() => onSelectRelated(id)}
                 className="rounded-full border border-[#2a2e3d] bg-[#0f1117] px-3 py-1.5 text-xs font-medium text-[#00d4ff] transition-colors hover:border-[#00d4ff]/40 hover:bg-[#242837]"
               >
-                {relatedId}
+                {pb!.title}
               </button>
             ))}
           </div>
         </section>
       )}
+
+      {/* ── Mobile Quick Actions (inline on mobile) ────────────── */}
+      {showMobileActions && (
+        <section className="rounded-xl border border-[#2a2e3d] bg-[#1a1d27] p-4 space-y-4 lg:hidden">
+          <h2 className="text-sm font-bold text-[#f1f5f9]">
+            Quick Actions
+          </h2>
+
+          {/* Quick questions */}
+          {playbook.customerQuestions.length > 0 && (
+            <div>
+              <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#4a5568]">
+                Quick Questions
+              </h3>
+              <div className="space-y-2">
+                {playbook.customerQuestions.slice(0, 3).map((q, idx) => (
+                  <div key={idx} className="flex items-start gap-2 rounded-lg bg-[#242837] p-2.5">
+                    <span className="flex-1 text-xs text-[#f1f5f9]">{q}</span>
+                    <CopyButton text={q} size="sm" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Copy replies */}
+          {playbook.copyTemplates.length > 0 && (
+            <div>
+              <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#4a5568]">
+                Copy Replies
+              </h3>
+              <div className="space-y-2">
+                {playbook.copyTemplates.map((t, idx) => (
+                  <div key={idx} className="rounded-lg bg-[#242837] p-2.5">
+                    <p className="mb-1 text-xs font-bold text-[#f1f5f9]">{t.label}</p>
+                    <div className="mb-2 rounded bg-[#0f1117] p-2 font-mono text-xs text-[#94a3b8]">
+                      {t.text}
+                    </div>
+                    <div className="flex justify-end">
+                      <CopyButton text={t.text} label="Copy" size="sm" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Escalation */}
+          {playbook.escalationFormat && playbook.escalationFormat.length > 0 && (
+            <CopyButton
+              text={playbook.escalationFormat.join("\n")}
+              label="Copy Escalation Format"
+              size="lg"
+            />
+          )}
+        </section>
+      )}
     </div>
   );
-};
-
-export default PlaybookDetail;
+}

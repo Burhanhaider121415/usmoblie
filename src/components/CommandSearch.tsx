@@ -1,24 +1,34 @@
-import ModeToggle from "./ModeToggle";
+import { useRef, useEffect } from "react";
 
 interface CommandSearchProps {
   query: string;
   onQueryChange: (q: string) => void;
-  mode: "live" | "deep";
-  onModeToggle: (mode: "live" | "deep") => void;
+  autoFocus?: boolean;
 }
 
-const CommandSearch: React.FC<CommandSearchProps> = ({
+export default function CommandSearch({
   query,
   onQueryChange,
-  mode,
-  onModeToggle,
-}) => {
+  autoFocus = false,
+}: CommandSearchProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (autoFocus && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [autoFocus]);
+
   const isMac =
     typeof navigator !== "undefined" &&
     /Mac|iPod|iPhone|iPad/.test(navigator.userAgent);
 
   return (
-    <div id="command-search" className="w-full space-y-3">
+    <div
+      id="command-search"
+      className="w-full"
+      onClick={() => inputRef.current?.focus()}
+    >
       {/* Search Input Container */}
       <div className="relative">
         {/* Search Icon */}
@@ -39,6 +49,7 @@ const CommandSearch: React.FC<CommandSearchProps> = ({
 
         {/* Input */}
         <input
+          ref={inputRef}
           id="command-search-input"
           type="text"
           value={query}
@@ -56,8 +67,12 @@ const CommandSearch: React.FC<CommandSearchProps> = ({
             <button
               id="command-search-clear"
               type="button"
-              onClick={() => onQueryChange("")}
-              className="text-[#4a5568] hover:text-[#94a3b8] transition-colors p-0.5"
+              onClick={(e) => {
+                e.stopPropagation();
+                onQueryChange("");
+                inputRef.current?.focus();
+              }}
+              className="text-[#4a5568] hover:text-[#94a3b8] transition-colors p-1 rounded hover:bg-[#2a2e3d]"
               aria-label="Clear search"
             >
               <svg
@@ -88,11 +103,6 @@ const CommandSearch: React.FC<CommandSearchProps> = ({
           )}
         </div>
       </div>
-
-      {/* Mode Toggle */}
-      <ModeToggle mode={mode} onToggle={onModeToggle} />
     </div>
   );
-};
-
-export default CommandSearch;
+}

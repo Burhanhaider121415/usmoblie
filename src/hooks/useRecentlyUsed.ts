@@ -1,11 +1,12 @@
 import { useState, useCallback } from "react";
 
+const RECENT_KEY = "signal-desk-recent";
 const MAX_RECENT = 10;
 
 export function useRecentlyUsed() {
   const [recentlyUsed, setRecentlyUsed] = useState<string[]>(() => {
     try {
-      const stored = sessionStorage.getItem("signal-desk-recent");
+      const stored = localStorage.getItem(RECENT_KEY);
       return stored ? JSON.parse(stored) : [];
     } catch {
       return [];
@@ -17,9 +18,9 @@ export function useRecentlyUsed() {
       const filtered = prev.filter((id) => id !== playbookId);
       const updated = [playbookId, ...filtered].slice(0, MAX_RECENT);
       try {
-        sessionStorage.setItem("signal-desk-recent", JSON.stringify(updated));
+        localStorage.setItem(RECENT_KEY, JSON.stringify(updated));
       } catch {
-        // sessionStorage may be unavailable
+        // localStorage may be unavailable
       }
       return updated;
     });

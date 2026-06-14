@@ -20,9 +20,10 @@ const fuseOptions: IFuseOptions<Playbook> = {
     { name: "useWhen", weight: 0.15 },
     { name: "category", weight: 0.1 },
   ],
-  threshold: 0.4, // 0 = exact match, 1 = match anything
+  threshold: 0.4,
   includeScore: true,
-  ignoreLocation: true, // Don't penalize matches later in the string
+  includeMatches: true,
+  ignoreLocation: true,
   minMatchCharLength: 2,
   shouldSort: true,
   findAllMatches: true,
@@ -31,49 +32,61 @@ const fuseOptions: IFuseOptions<Playbook> = {
 export interface SearchResult {
   playbook: Playbook;
   score: number;
+  matchedFields: string[];
 }
 
 export function useSearch(playbooks: Playbook[]) {
   const [query, setQuery] = useState("");
-  const [mode, setMode] = useState<"live" | "deep">("live");
+  const [showAll, setShowAll] = useState(false);
 
   const fuse = useMemo(() => new Fuse(playbooks, fuseOptions), [playbooks]);
 
-  const results = useMemo((): SearchResult[] => {
+  const allResults = useMemo((): SearchResult[] => {
     if (!query.trim()) return [];
 
     const fuseResults = fuse.search(query.trim());
 
-    return fuseResults.map((r) => ({
-      playbook: r.item,
-      score: r.score ?? 1,
-    }));
+    return fuseResults.map((r) => {
+      // Extract matched field names for display
+      const matchedFields: string[] = [];
+      if (r.matches) {
+        for (const m of r.matches) {
+          if (m.key && !matchedFields.includes(m.key)) {
+            matchedFields.push(m.key);
+          }
+        }
+      }
+      return {
+        playbook: r.item,
+        score: r.score ?? 1,
+        matchedFields,
+      };
+    });
   }, [fuse, query]);
 
-  // Live mode: best match + top related
-  const liveResults = useMemo((): SearchResult[] => {
-    if (mode === "deep") return results;
-    return results.slice(0, 4); // Best match + 3 related
-  }, [results, mode]);
+  // Default: Best match + top 3 related. ShowAll: everything.
+  const results = useMemo((): SearchResult[] => {
+    if (showAll) return allResults;
+    return allResults.slice(0, 4);
+  }, [allResults, showAll]);
 
   const bestMatch = useMemo((): SearchResult | null => {
-    return results.length > 0 ? results[0] : null;
-  }, [results]);
+    return allResults.length > 0 ? allResults[0] : null;
+  }, [allResults]);
 
   const relatedResults = useMemo((): SearchResult[] => {
-    if (mode === "deep") return results.slice(1);
-    return results.slice(1, 4);
-  }, [results, mode]);
+    if (showAll) return allResults.slice(1);
+    return allResults.slice(1, 4);
+  }, [allResults, showAll]);
 
   return {
     query,
     setQuery,
-    mode,
-    setMode,
-    results: mode === "live" ? liveResults : results,
+    showAll,
+    setShowAll,
+    results,
     bestMatch,
     relatedResults,
-    totalCount: results.length,
-    allResults: results,
+    totalCount: allResults.length,
   };
 }

@@ -4,31 +4,38 @@ interface SidebarProps {
   categories: Category[];
   activeCategory: string | null;
   onCategorySelect: (id: string) => void;
+  onLogoClick: () => void;
   favorites: string[];
   recentlyUsed: string[];
 }
 
-const Sidebar: React.FC<SidebarProps> = ({
+export default function Sidebar({
   categories,
   activeCategory,
   onCategorySelect,
+  onLogoClick,
   favorites,
   recentlyUsed,
-}) => {
+}: SidebarProps) {
   return (
     <aside
       id="sidebar"
       className="w-60 h-screen bg-[#1a1d27] border-r border-[#2a2e3d] overflow-y-auto flex flex-col"
     >
-      {/* Logo Area */}
-      <div id="sidebar-logo" className="px-5 pt-5 pb-3">
-        <h1 className="text-lg font-bold text-[#00d4ff] leading-tight">
+      {/* Logo Area — Clickable Home Button */}
+      <button
+        id="sidebar-logo"
+        type="button"
+        onClick={onLogoClick}
+        className="w-full px-5 pt-5 pb-3 text-left cursor-pointer hover:bg-[#242837] transition-colors group"
+      >
+        <h1 className="text-lg font-bold text-[#00d4ff] leading-tight group-hover:text-[#00e5ff] transition-colors">
           Signal Desk
         </h1>
         <p className="text-xs text-[#94a3b8] mt-0.5">
           Support Command Center
         </p>
-      </div>
+      </button>
 
       {/* Divider */}
       <div className="mx-4 border-t border-[#2a2e3d]" />
@@ -76,7 +83,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
         {favorites.length === 0 && (
           <p className="px-4 py-1 text-xs text-[#4a5568]">
-            No favorites yet
+            Star a playbook to save it here
           </p>
         )}
 
@@ -95,7 +102,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
         {recentlyUsed.length === 0 && (
           <p className="px-4 py-1 text-xs text-[#4a5568]">
-            No recent playbooks
+            Playbooks you open appear here
           </p>
         )}
       </nav>
@@ -111,6 +118,4 @@ const Sidebar: React.FC<SidebarProps> = ({
       </div>
     </aside>
   );
-};
-
-export default Sidebar;
+}
