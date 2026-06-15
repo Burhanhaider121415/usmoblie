@@ -66,11 +66,26 @@ export default function App() {
     [selectedPlaybookId]
   );
 
-  // Playbooks filtered by category
-  const categoryPlaybooks = useMemo(
-    () => (activeCategory ? playbooks.filter((p) => p.category === activeCategory) : []),
-    [activeCategory]
-  );
+  // Playbooks filtered and sorted by category
+  const categoryPlaybooks = useMemo(() => {
+    if (!activeCategory) return [];
+    const filtered = playbooks.filter(
+      (p) =>
+        p.category === activeCategory ||
+        (p.secondaryCategories && p.secondaryCategories.includes(activeCategory))
+    );
+    const priorityWeight: Record<string, number> = {
+      critical: 4,
+      important: 3,
+      normal: 2,
+      low: 1,
+    };
+    return filtered.sort((a, b) => {
+      const wa = priorityWeight[a.priority || "normal"] || 2;
+      const wb = priorityWeight[b.priority || "normal"] || 2;
+      return wb - wa; // Critical first
+    });
+  }, [activeCategory]);
 
   // ── Handlers ──────────────────────────────────────────────
 
@@ -214,7 +229,7 @@ export default function App() {
                   No playbooks added to <span className="font-semibold text-[#f1f5f9]">{cat?.label}</span> yet.
                 </p>
                 <p className="text-xs text-[#4a5568]">
-                  This is dummy prototype content. Real playbooks will be added later.
+                  Select another category or search for an active issue above.
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 pt-2">
                   <button
@@ -223,59 +238,88 @@ export default function App() {
                   >
                     ← Go to Start Here
                   </button>
-                  <button
-                    onClick={() => handleSelectPlaybook("esim-activation")}
-                    className="px-3 py-1.5 text-xs rounded-full bg-[#242837] text-[#94a3b8] hover:text-[#00d4ff] hover:bg-[#2a2e3d] transition-colors border border-[#2a2e3d]"
-                  >
-                    eSIM Activation Issue
-                  </button>
-                  <button
-                    onClick={() => handleSelectPlaybook("port-in-delay")}
-                    className="px-3 py-1.5 text-xs rounded-full bg-[#242837] text-[#94a3b8] hover:text-[#00d4ff] hover:bg-[#2a2e3d] transition-colors border border-[#2a2e3d]"
-                  >
-                    Port-In Delay
-                  </button>
-                  <button
-                    onClick={() => handleSelectPlaybook("escalation-format")}
-                    className="px-3 py-1.5 text-xs rounded-full bg-[#242837] text-[#94a3b8] hover:text-[#00d4ff] hover:bg-[#2a2e3d] transition-colors border border-[#2a2e3d]"
-                  >
-                    Escalation Format
-                  </button>
                 </div>
               </div>
             ) : (
               <div className="space-y-2">
                 {categoryPlaybooks.map((pb) => (
-                  <button
+                  <div
                     key={pb.id}
                     onClick={() => handleSelectPlaybook(pb.id)}
-                    className="w-full text-left bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-4 hover:bg-[#242837] hover:border-[#3a3e4d] transition-all group"
+                    className="w-full text-left bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-4 hover:bg-[#242837] hover:border-[#3a3e4d] transition-all cursor-pointer group space-y-3"
                   >
-                    <div className="flex items-start justify-between">
+                    <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0 flex-1">
                         <h3 className="text-sm font-semibold text-[#f1f5f9] group-hover:text-[#00d4ff] transition-colors">
                           {pb.title}
                         </h3>
-                        <p className="text-xs text-[#4a5568] mt-1 line-clamp-2">
-                          {pb.quickAnswer}
+                        <p className="text-xs text-[#94a3b8] mt-1 line-clamp-1">
+                          {pb.quickAnswer || pb.preview?.problem}
                         </p>
                       </div>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleFavorite(pb.id);
-                        }}
-                        className={`flex-shrink-0 ml-2 text-lg transition-colors ${
-                          isFavorite(pb.id)
-                            ? "text-amber-400 hover:text-amber-300"
-                            : "text-[#4a5568] hover:text-amber-400"
-                        }`}
-                        title={isFavorite(pb.id) ? "Unpin playbook" : "Pin playbook"}
-                      >
-                        {isFavorite(pb.id) ? "★" : "☆"}
-                      </button>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        {pb.priority === "critical" && (
+                          <span className="text-[10px] bg-red-500/10 text-red-400 px-2 py-0.5 rounded-full font-medium uppercase tracking-wider">
+                            Critical
+                          </span>
+                        )}
+                        {pb.priority === "important" && (
+                          <span className="text-[10px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded-full font-medium uppercase tracking-wider">
+                            Important
+                          </span>
+                        )}
+                        {pb.priority === "normal" && (
+                          <span className="text-[10px] bg-[#242837] text-[#94a3b8] px-2 py-0.5 rounded-full font-medium uppercase tracking-wider">
+                            Normal
+                          </span>
+                        )}
+                        {pb.priority === "low" && (
+                          <span className="text-[10px] bg-[#242837]/50 text-[#4a5568] px-2 py-0.5 rounded-full font-medium uppercase tracking-wider">
+                            Low
+                          </span>
+                        )}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleFavorite(pb.id);
+                          }}
+                          className={`text-base transition-colors ${
+                            isFavorite(pb.id)
+                              ? "text-amber-400 hover:text-amber-300"
+                              : "text-[#4a5568] hover:text-amber-400"
+                          }`}
+                          title={isFavorite(pb.id) ? "Unpin playbook" : "Pin playbook"}
+                        >
+                          {isFavorite(pb.id) ? "★" : "☆"}
+                        </button>
+                      </div>
                     </div>
-                  </button>
+
+                    {/* Previews tags, question, action */}
+                    {pb.tags && pb.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {pb.tags.slice(0, 3).map((tag) => (
+                          <span key={tag} className="text-[10px] bg-[#0f1117] text-[#94a3b8] px-2 py-0.5 rounded">
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pt-2 border-t border-[#2a2e3d]/50 text-[11px]">
+                      {pb.preview?.firstQuestion && (
+                        <div className="text-[#94a3b8] truncate">
+                          <span className="text-[#00d4ff] font-semibold">Q:</span> {pb.preview.firstQuestion}
+                        </div>
+                      )}
+                      {pb.preview?.firstAction && (
+                        <div className="text-[#94a3b8] truncate">
+                          <span className="text-[#00d4ff] font-semibold">Act:</span> {pb.preview.firstAction}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 ))}
               </div>
             )}

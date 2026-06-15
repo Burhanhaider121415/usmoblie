@@ -217,13 +217,30 @@ export default function PlaybookDetail({
         </div>
       </section>
 
+      {/* ── Zendesk Note ── */}
+      {playbook.zendeskNote && (
+        <section className="rounded-xl border border-blue-500/20 bg-[#242837] p-4">
+          <h2 className="mb-2 text-sm font-semibold text-blue-400">
+            📝 Zendesk Internal Note — do not send to customer
+          </h2>
+          <div className="rounded-lg bg-[#0f1117] p-3">
+            <pre className="whitespace-pre-wrap font-mono text-sm text-[#f1f5f9]">
+              {playbook.zendeskNote}
+            </pre>
+          </div>
+          <div className="mt-3 flex justify-end">
+            <CopyButton text={playbook.zendeskNote} label="Copy Internal Note" />
+          </div>
+        </section>
+      )}
+
       {/* ── Escalate If ────────────────────────────────────────── */}
       <section className="rounded-xl border border-red-500/20 bg-[#242837] p-4">
         <h2 className="mb-3 text-sm font-semibold text-red-400">
           🚨 Escalate If
         </h2>
         <ul className="space-y-1.5">
-          {playbook.escalationRequiredWhen.map((item, idx) => (
+          {(playbook.escalation?.neededWhen || playbook.escalationRequiredWhen || []).map((item, idx) => (
             <li
               key={idx}
               className="flex items-start gap-2 text-sm text-[#f1f5f9]"
@@ -236,20 +253,20 @@ export default function PlaybookDetail({
       </section>
 
       {/* ── Escalation Format ──────────────────────────────────── */}
-      {playbook.escalationFormat && playbook.escalationFormat.length > 0 && (
+      {((playbook.escalation?.summaryTemplate) || (playbook.escalationFormat && playbook.escalationFormat.length > 0)) && (
         <section className="rounded-xl bg-[#242837] p-4">
           <h2 className="mb-3 text-sm font-semibold text-[#f1f5f9]">
-            📋 Escalation Format
+            📋 Escalation Summary — internal
           </h2>
           <div className="rounded-lg bg-[#0f1117] p-3">
             <pre className="whitespace-pre-wrap font-mono text-sm text-[#f1f5f9]">
-              {playbook.escalationFormat.join("\n")}
+              {playbook.escalation?.summaryTemplate || (playbook.escalationFormat ? playbook.escalationFormat.join("\n") : "")}
             </pre>
           </div>
           <div className="mt-3">
             <CopyButton
-              text={playbook.escalationFormat.join("\n")}
-              label="Copy Escalation Format"
+              text={playbook.escalation?.summaryTemplate || (playbook.escalationFormat ? playbook.escalationFormat.join("\n") : "")}
+              label="Copy Escalation Summary"
               size="lg"
             />
           </div>
@@ -274,6 +291,20 @@ export default function PlaybookDetail({
               </button>
             ))}
           </div>
+        </section>
+      )}
+
+      {/* ── Needs Internal Verification ── */}
+      {playbook.internalVerificationRequired && playbook.internalVerificationRequired.length > 0 && (
+        <section className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4">
+          <h2 className="mb-2 text-sm font-semibold text-amber-400 flex items-center gap-2">
+            <span>⚠️</span> INTERNAL VERIFICATION REQUIRED
+          </h2>
+          <ul className="space-y-1 text-xs text-amber-300/90 list-disc list-inside">
+            {playbook.internalVerificationRequired.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
         </section>
       )}
 

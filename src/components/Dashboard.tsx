@@ -12,7 +12,16 @@ interface DashboardProps {
   isFavorite: (id: string) => boolean;
 }
 
-const commonIssueIds = ["mobile-data-not-working", "no-service", "esim-activation", "hotspot-not-working", "qci-priority"];
+const commonIssueIds = [
+  "no-service-sos-only",
+  "bars-but-no-internet-data-not-working",
+  "mms-picture-group-text-fails",
+  "porting-delay-old-sim-still-works-bank-codes-missing",
+  "after-teleport-network-switch-nothing-works",
+  "slow-data-video-buffering-speed-complaints",
+  "hotspot-not-working",
+  "error-97-invalid-destination-messaging-error"
+];
 
 function getPlaybook(id: string): Playbook | undefined {
   return playbooks.find((p) => p.id === id);
@@ -98,7 +107,14 @@ export default function Dashboard({
             Star any playbook to pin it here for quick access.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-            {["apn-iphone", "no-service", "esim-activation", "port-in-delay", "escalation-format"].map((id) => {
+            {[
+              "no-service-sos-only",
+              "bars-but-no-internet-data-not-working",
+              "esim-install-qr-code-failures",
+              "porting-delay-old-sim-still-works-bank-codes-missing",
+              "app-dashboard-bug-troubleshooting",
+              "internal-notes-escalations-severity"
+            ].map((id) => {
               const pb = getPlaybook(id);
               if (!pb) return null;
               return (
@@ -191,25 +207,46 @@ export default function Dashboard({
         <h2 className="text-xs uppercase tracking-widest text-[#4a5568] font-semibold mb-3">
           ⚡ Quick Tools
         </h2>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
           <button
-            onClick={() => onSelectPlaybook("escalation-format")}
+            onClick={() => onSelectPlaybook("internal-notes-escalations-severity")}
             className="bg-[#1a1d27] border border-red-500/20 rounded-lg p-3 text-left hover:bg-red-500/5 transition-all"
           >
             <div className="text-sm font-medium text-red-400">🚨 Escalation Format</div>
             <div className="text-xs text-[#4a5568] mt-1">Copy the escalation template</div>
           </button>
           <button
-            onClick={() => onSelectPlaybook("empathy-replies")}
+            onClick={() => onSelectPlaybook("macro-usage-reply-templates")}
             className="bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-3 text-left hover:bg-[#242837] transition-all"
           >
             <div className="text-sm font-medium text-[#f1f5f9]">💬 Reply Templates</div>
-            <div className="text-xs text-[#4a5568] mt-1">Empathy & professional replies</div>
+            <div className="text-xs text-[#4a5568] mt-1">Macro replies & guidelines</div>
+          </button>
+          <button
+            onClick={() => onSelectPlaybook("zendesk-ticket-statuses-sla-discipline")}
+            className="bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-3 text-left hover:bg-[#242837] transition-all"
+          >
+            <div className="text-sm font-medium text-[#f1f5f9]">⚙️ Zendesk Note Template</div>
+            <div className="text-xs text-[#4a5568] mt-1">Zendesk SLA & note layouts</div>
+          </button>
+          <button
+            onClick={() => onSelectPlaybook("refund-policy-safe-language")}
+            className="bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-3 text-left hover:bg-[#242837] transition-all"
+          >
+            <div className="text-sm font-medium text-[#f1f5f9]">💲 Billing Safe Language</div>
+            <div className="text-xs text-[#4a5568] mt-1">Refund policies & phrases</div>
+          </button>
+          <button
+            onClick={() => onSelectPlaybook("pattern-tracking-known-issue-logging")}
+            className="bg-[#1a1d27] border border-[#2a2e3d] rounded-lg p-3 text-left hover:bg-[#242837] transition-all"
+          >
+            <div className="text-sm font-medium text-[#f1f5f9]">📊 Pattern Log Template</div>
+            <div className="text-xs text-[#4a5568] mt-1">Known issues pattern tracker</div>
           </button>
         </div>
       </section>
 
-      {/* 6. Recently Used */}
+      {/* Recently Used */}
       {recentPlaybooks.length > 0 && (
         <section>
           <h2 className="text-xs uppercase tracking-widest text-[#4a5568] font-semibold mb-3">
@@ -244,10 +281,10 @@ export default function Dashboard({
         </section>
       )}
 
-      {/* Prototype Notice */}
+      {/* Command Center Title */}
       <div className="text-center pt-4 border-t border-[#2a2e3d]">
         <p className="text-[10px] text-[#4a5568]">
-          Prototype using dummy data. Replace with verified internal playbooks later.
+          US Mobile Support Command Center — Live Database
         </p>
       </div>
     </div>

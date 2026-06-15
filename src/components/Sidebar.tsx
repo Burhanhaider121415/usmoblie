@@ -113,7 +113,7 @@ export default function Sidebar({
         className="px-4 py-3 border-t border-[#2a2e3d]"
       >
         <p className="text-[10px] text-[#4a5568] text-center">
-          Prototype — Dummy Data
+          US Mobile Support Cockpit
         </p>
       </div>
     </aside>
