@@ -335,8 +335,7 @@ export const playbooks: Playbook[] = [
       "Toggle Airplane Mode ON for 30 seconds, then OFF."
     ],
     "steps": [
-      "Confirm the line is active and data is not exhausted or blocked. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Confirm the line is active and data is not exhausted or blocked. INTERNAL VERIFICATION REQUIRED",
       "Ask customer to turn Wi-Fi off and test a basic website.",
       "Confirm correct data line is selected on dual-SIM devices.",
       "Disable VPN, iCloud Private Relay, Private DNS, Low Data Mode, or Data Saver",
@@ -373,8 +372,7 @@ export const playbooks: Playbook[] = [
         "escalate or use approved APN workaround."
       ],
       "general": [
-        "Confirm the line is active and data is not exhausted or blocked. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "Confirm the line is active and data is not exhausted or blocked. INTERNAL VERIFICATION REQUIRED",
         "Ask customer to turn Wi-Fi off and test a basic website.",
         "Confirm correct data line is selected on dual-SIM devices.",
         "Disable VPN, iCloud Private Relay, Private DNS, Low Data Mode, or Data Saver",
@@ -690,8 +688,7 @@ export const playbooks: Playbook[] = [
       "or port lock mismatch?"
     ],
     "quickChecks": [
-      "Check internal port dashboard for status, rejection code, FOC date, or error. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check internal port dashboard for status, rejection code, FOC date, or error. INTERNAL VERIFICATION REQUIRED",
       "Confirm donor account is still active.",
       "Confirm standard P2P SMS works after port completion.",
       "Ask customer to text",
@@ -700,8 +697,7 @@ export const playbooks: Playbook[] = [
       "Check whether the issue is one bank only or all short codes."
     ],
     "quickSteps": [
-      "Check internal port dashboard for status, rejection code, FOC date, or error. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check internal port dashboard for status, rejection code, FOC date, or error. INTERNAL VERIFICATION REQUIRED",
       "Confirm donor account is still active.",
       "Confirm standard P2P SMS works after port completion.",
       "Ask customer to text",
@@ -710,8 +706,7 @@ export const playbooks: Playbook[] = [
       "Check whether the issue is one bank only or all short codes."
     ],
     "steps": [
-      "If old SIM still works, treat as port pending/incomplete. Check LNP status. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If old SIM still works, treat as port pending/incomplete. Check LNP status. INTERNAL VERIFICATION REQUIRED",
       "If rejected, identify exact rejection reason and ask customer for corrected account",
       "number, transfer PIN, or ZIP.",
       "Tell customer to keep old carrier account active until the transfer fully completes.",
@@ -738,8 +733,7 @@ export const playbooks: Playbook[] = [
         "Clear Messages cache if standard SMS behavior appears inconsistent."
       ],
       "general": [
-        "If old SIM still works, treat as port pending/incomplete. Check LNP status. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "If old SIM still works, treat as port pending/incomplete. Check LNP status. INTERNAL VERIFICATION REQUIRED",
         "If rejected, identify exact rejection reason and ask customer for corrected account",
         "number, transfer PIN, or ZIP.",
         "Tell customer to keep old carrier account active until the transfer fully completes.",
@@ -871,20 +865,17 @@ export const playbooks: Playbook[] = [
       "Confirm new eSIM is installed, enabled, and selected for voice/data.",
       "Confirm old inactive eSIM is removed or disabled after the new profile is available.",
       "Confirm stable Wi-Fi and VPN off during eSIM installation.",
-      "Check Teleport frequency/limit status if another switch is requested. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check Teleport frequency/limit status if another switch is requested. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Verify Teleport/network switch status. INTERNAL VERIFICATION REQUIRED",
       "Confirm new eSIM is installed, enabled, and selected for voice/data.",
       "Confirm old inactive eSIM is removed or disabled after the new profile is available.",
       "Confirm stable Wi-Fi and VPN off during eSIM installation.",
-      "Check Teleport frequency/limit status if another switch is requested. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check Teleport frequency/limit status if another switch is requested. INTERNAL VERIFICATION REQUIRED"
     ],
     "steps": [
-      "Confirm Teleport status is complete or identify where it is stuck. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Confirm Teleport status is complete or identify where it is stuck. INTERNAL VERIFICATION REQUIRED",
       "Confirm the customer has the new destination-network eSIM/activation method.",
       "Connect customer to stable Wi-Fi and disable VPN.",
       "Install the new eSIM/profile.",
@@ -913,8 +904,7 @@ export const playbooks: Playbook[] = [
         "Reboot after install."
       ],
       "general": [
-        "Confirm Teleport status is complete or identify where it is stuck. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "Confirm Teleport status is complete or identify where it is stuck. INTERNAL VERIFICATION REQUIRED",
         "Confirm the customer has the new destination-network eSIM/activation method.",
         "Connect customer to stable Wi-Fi and disable VPN.",
         "Install the new eSIM/profile.",
@@ -1041,8 +1031,7 @@ export const playbooks: Playbook[] = [
       "Are you using hotspot, VPN, iCloud Private Relay, Low Data Mode, or Data Saver?"
     ],
     "quickChecks": [
-      "Verify current plan, high-speed data usage, hotspot usage, and throttle state. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Verify current plan, high-speed data usage, hotspot usage, and throttle state. INTERNAL VERIFICATION REQUIRED",
       "Ask customer to run a speed test with Wi-Fi/VPN off.",
       "Check whether Data Waster/video setting is enabled if the issue is video quality.",
       "INTERNAL VERIFICATION REQUIRED",
@@ -1050,8 +1039,7 @@ export const playbooks: Playbook[] = [
       "Compare indoor vs outdoor and off-peak vs peak-time behavior."
     ],
     "quickSteps": [
-      "Verify current plan, high-speed data usage, hotspot usage, and throttle state. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Verify current plan, high-speed data usage, hotspot usage, and throttle state. INTERNAL VERIFICATION REQUIRED",
       "Ask customer to run a speed test with Wi-Fi/VPN off.",
       "Check whether Data Waster/video setting is enabled if the issue is video quality.",
       "INTERNAL VERIFICATION REQUIRED",
@@ -1059,8 +1047,7 @@ export const playbooks: Playbook[] = [
       "Compare indoor vs outdoor and off-peak vs peak-time behavior."
     ],
     "steps": [
-      "Confirm plan, cycle usage, and whether the line is in a hard throttle state. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Confirm plan, cycle usage, and whether the line is in a hard throttle state. INTERNAL VERIFICATION REQUIRED",
       "Ask customer to disable Wi-Fi/VPN and run one speed test.",
       "If speed is consistently near throttle rate, explain plan/cycle data behavior after",
       "verification.",
@@ -1088,8 +1075,7 @@ export const playbooks: Playbook[] = [
         "Confirm APN is correct if slow data followed activation/Teleport."
       ],
       "general": [
-        "Confirm plan, cycle usage, and whether the line is in a hard throttle state. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "Confirm plan, cycle usage, and whether the line is in a hard throttle state. INTERNAL VERIFICATION REQUIRED",
         "Ask customer to disable Wi-Fi/VPN and run one speed test.",
         "If speed is consistently near throttle rate, explain plan/cycle data behavior after",
         "verification.",
@@ -1423,8 +1409,7 @@ export const playbooks: Playbook[] = [
     ],
     "steps": [
       "Identify whether failure is SMS-only, MMS-only, RCS-only, or all messaging.",
-      "Check line status, text balance, and SMS feature provisioning. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check line status, text balance, and SMS feature provisioning. INTERNAL VERIFICATION REQUIRED",
       "Test plain SMS to one known working number.",
       "If Error 97 appears on all outgoing SMS, refresh/reprovision SMS feature if available.",
       "INTERNAL VERIFICATION REQUIRED",
@@ -1462,8 +1447,7 @@ export const playbooks: Playbook[] = [
       ],
       "general": [
         "Identify whether failure is SMS-only, MMS-only, RCS-only, or all messaging.",
-        "Check line status, text balance, and SMS feature provisioning. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "Check line status, text balance, and SMS feature provisioning. INTERNAL VERIFICATION REQUIRED",
         "Test plain SMS to one known working number.",
         "If Error 97 appears on all outgoing SMS, refresh/reprovision SMS feature if available.",
         "INTERNAL VERIFICATION REQUIRED",
@@ -3969,8 +3953,7 @@ export const playbooks: Playbook[] = [
       "Confirm device supports eSIM and is carrier-unlocked.",
       "Confirm Wi-Fi is stable and VPN/Private Relay/Private DNS are off.",
       "Check for old, inactive, or pending eSIM profiles.",
-      "Check whether the QR/profile has already been used or is stuck. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check whether the QR/profile has already been used or is stuck. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Confirm EID/IMEI matches the backend activation record. INTERNAL VERIFICATION",
@@ -3978,8 +3961,7 @@ export const playbooks: Playbook[] = [
       "Confirm device supports eSIM and is carrier-unlocked.",
       "Confirm Wi-Fi is stable and VPN/Private Relay/Private DNS are off.",
       "Check for old, inactive, or pending eSIM profiles.",
-      "Check whether the QR/profile has already been used or is stuck. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check whether the QR/profile has already been used or is stuck. INTERNAL VERIFICATION REQUIRED"
     ],
     "steps": [
       "Ask for the exact error message.",
@@ -4159,23 +4141,20 @@ export const playbooks: Playbook[] = [
       "Confirm customer identity/account verification. INTERNAL VERIFICATION REQUIRED",
       "Confirm device EID/IMEI. INTERNAL VERIFICATION REQUIRED",
       "Confirm Wi-Fi is available for reinstall.",
-      "Check whether reissue is allowed or blocked by security limits. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check whether reissue is allowed or blocked by security limits. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Confirm whether eSIM is deleted or just turned off.",
       "Confirm customer identity/account verification. INTERNAL VERIFICATION REQUIRED",
       "Confirm device EID/IMEI. INTERNAL VERIFICATION REQUIRED",
       "Confirm Wi-Fi is available for reinstall.",
-      "Check whether reissue is allowed or blocked by security limits. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check whether reissue is allowed or blocked by security limits. INTERNAL VERIFICATION REQUIRED"
     ],
     "steps": [
       "Ask customer to open Cellular/SIM settings and confirm whether the eSIM exists but is",
       "off, or is fully deleted.",
       "If profile exists, toggle it ON and select it for data/calls.",
-      "If profile is deleted, complete required identity/security verification. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If profile is deleted, complete required identity/security verification. INTERNAL VERIFICATION REQUIRED",
       "Verify EID/IMEI for the target device. INTERNAL VERIFICATION REQUIRED",
       "Reissue/generate a new eSIM profile if allowed. INTERNAL VERIFICATION REQUIRED",
       "Send or display the new QR/profile through approved process.",
@@ -4202,8 +4181,7 @@ export const playbooks: Playbook[] = [
         "Ask customer to open Cellular/SIM settings and confirm whether the eSIM exists but is",
         "off, or is fully deleted.",
         "If profile exists, toggle it ON and select it for data/calls.",
-        "If profile is deleted, complete required identity/security verification. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "If profile is deleted, complete required identity/security verification. INTERNAL VERIFICATION REQUIRED",
         "Verify EID/IMEI for the target device. INTERNAL VERIFICATION REQUIRED",
         "Reissue/generate a new eSIM profile if allowed. INTERNAL VERIFICATION REQUIRED",
         "Send or display the new QR/profile through approved process.",
@@ -4549,8 +4527,7 @@ export const playbooks: Playbook[] = [
       "If another phone reads the SIM, suspect original phone SIM reader/device issue.",
       "If no phone reads the SIM, suspect damaged SIM and replace or move to eSIM if",
       "compatible. INTERNAL VERIFICATION REQUIRED",
-      "If dashboard says “SIM already used,” check ICCID mapping. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "If dashboard says “SIM already used,” check ICCID mapping. INTERNAL VERIFICATION REQUIRED"
     ],
     "deviceSpecificSteps": {
       "iphone": [
@@ -4578,8 +4555,7 @@ export const playbooks: Playbook[] = [
         "If another phone reads the SIM, suspect original phone SIM reader/device issue.",
         "If no phone reads the SIM, suspect damaged SIM and replace or move to eSIM if",
         "compatible. INTERNAL VERIFICATION REQUIRED",
-        "If dashboard says “SIM already used,” check ICCID mapping. INTERNAL",
-        "VERIFICATION REQUIRED"
+        "If dashboard says “SIM already used,” check ICCID mapping. INTERNAL VERIFICATION REQUIRED"
       ]
     },
     "copyTemplates": [
@@ -4710,8 +4686,7 @@ export const playbooks: Playbook[] = [
       "REQUIRED",
       "Confirm device is unlocked and compatible.",
       "Airplane Mode ON for 30 seconds, then OFF.",
-      "Check whether there are multiple reports or local network issues. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check whether there are multiple reports or local network issues. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Check account/line status and billing/renewal state. INTERNAL VERIFICATION",
@@ -4720,8 +4695,7 @@ export const playbooks: Playbook[] = [
       "REQUIRED",
       "Confirm device is unlocked and compatible.",
       "Airplane Mode ON for 30 seconds, then OFF.",
-      "Check whether there are multiple reports or local network issues. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check whether there are multiple reports or local network issues. INTERNAL VERIFICATION REQUIRED"
     ],
     "steps": [
       "Confirm the line is active and not suspended. INTERNAL VERIFICATION REQUIRED",
@@ -5430,10 +5404,8 @@ export const playbooks: Playbook[] = [
     ],
     "quickChecks": [
       "Confirm standard SMS works both inbound and outbound.",
-      "Check port completion or recent Teleport/network switch timing. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "Check for SMS/short-code/premium messaging blocks if available. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check port completion or recent Teleport/network switch timing. INTERNAL VERIFICATION REQUIRED",
+      "Check for SMS/short-code/premium messaging blocks if available. INTERNAL VERIFICATION REQUIRED",
       "Ask customer to text",
       "HELP",
       "to the short code if the sender supports it.",
@@ -5441,10 +5413,8 @@ export const playbooks: Playbook[] = [
     ],
     "quickSteps": [
       "Confirm standard SMS works both inbound and outbound.",
-      "Check port completion or recent Teleport/network switch timing. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "Check for SMS/short-code/premium messaging blocks if available. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check port completion or recent Teleport/network switch timing. INTERNAL VERIFICATION REQUIRED",
+      "Check for SMS/short-code/premium messaging blocks if available. INTERNAL VERIFICATION REQUIRED",
       "Ask customer to text",
       "HELP",
       "to the short code if the sender supports it.",
@@ -6033,8 +6003,7 @@ export const playbooks: Playbook[] = [
       "or device voicemail shortcut depending on",
       "network/device.",
       "Initialize voicemail inbox if it has never been set up.",
-      "If password is forgotten, follow network-specific reset process. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If password is forgotten, follow network-specific reset process. INTERNAL VERIFICATION REQUIRED",
       "For VVM, open phone app voicemail tab after cellular data is confirmed.",
       "Restart phone.",
       "If VVM tab is missing, reset network settings only after basic checks.",
@@ -6070,8 +6039,7 @@ export const playbooks: Playbook[] = [
         "or device voicemail shortcut depending on",
         "network/device.",
         "Initialize voicemail inbox if it has never been set up.",
-        "If password is forgotten, follow network-specific reset process. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "If password is forgotten, follow network-specific reset process. INTERNAL VERIFICATION REQUIRED",
         "For VVM, open phone app voicemail tab after cellular data is confirmed.",
         "Restart phone.",
         "If VVM tab is missing, reset network settings only after basic checks.",
@@ -6285,7 +6253,12 @@ export const playbooks: Playbook[] = [
         "Escalate if feature is active and correctly configured but still not working."
       ]
     },
-    "copyTemplates": [],
+    "copyTemplates": [
+            {
+                  "label": "Customer Reply — Caller ID / Spam",
+                  "text": "Caller ID and spam detection features depend on your device and network settings. Let me check your line setup. In the meantime, could you confirm whether the issue is with outgoing caller ID (your name not showing) or incoming spam detection?"
+            }
+      ],
     "zendeskNote": "Issue: Caller ID / Spam Detect / Web Filtering \nNetwork: [Warp / Dark Star / Light Speed / Unknown] \nFeature: [CNAM / Spam Detect / Web Filtering] \nDevice/OS: [Device + OS if relevant] \nSymptoms: [Wireless Caller / spam not labeled / sites not filtered / false block] \nSteps tried: Feature status checked, VPN/Private Relay/Private DNS disabled, cellular-only test, \nrequested CNAM verified \nInternal checks: Add-on status, network support, backend feature state, CNAM request status \nINTERNAL VERIFICATION REQUIRED \nSuspected cause: Feature not active, network limitation, external CNAM cache, or VPN/DNS \nbypass \nNext action: Submit feature request or escalate if active feature fails",
     "escalation": {
       "neededWhen": [
@@ -7266,8 +7239,7 @@ export const playbooks: Playbook[] = [
       "etc.",
       "Confirm the old account is still active.",
       "Confirm the customer has not cancelled the old service.",
-      "Check whether the port has a rejection code or needs corrected info. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check whether the port has a rejection code or needs corrected info. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Check internal port status: pending, rejected, FOC/commit date, completed, or",
@@ -7276,8 +7248,7 @@ export const playbooks: Playbook[] = [
       "etc.",
       "Confirm the old account is still active.",
       "Confirm the customer has not cancelled the old service.",
-      "Check whether the port has a rejection code or needs corrected info. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check whether the port has a rejection code or needs corrected info. INTERNAL VERIFICATION REQUIRED"
     ],
     "steps": [
       "Check the port status internally. INTERNAL VERIFICATION REQUIRED",
@@ -7846,8 +7817,7 @@ export const playbooks: Playbook[] = [
       "Confirm account/line status and number eligibility. INTERNAL VERIFICATION",
       "REQUIRED",
       "Guide customer to account number location if self-service exists.",
-      "Generate/provide transfer PIN only after successful verification. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Generate/provide transfer PIN only after successful verification. INTERNAL VERIFICATION REQUIRED",
       "Warn customer not to cancel the line manually before port completion."
     ],
     "quickSteps": [
@@ -7856,8 +7826,7 @@ export const playbooks: Playbook[] = [
       "Confirm account/line status and number eligibility. INTERNAL VERIFICATION",
       "REQUIRED",
       "Guide customer to account number location if self-service exists.",
-      "Generate/provide transfer PIN only after successful verification. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Generate/provide transfer PIN only after successful verification. INTERNAL VERIFICATION REQUIRED",
       "Warn customer not to cancel the line manually before port completion."
     ],
     "steps": [
@@ -7866,8 +7835,7 @@ export const playbooks: Playbook[] = [
       "If they want to preserve number, mention a pause/snooze/parking option only if current",
       "policy supports it. INTERNAL VERIFICATION REQUIRED",
       "Verify identity through approved method. INTERNAL VERIFICATION REQUIRED",
-      "Provide account number path or account number if support must provide it. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Provide account number path or account number if support must provide it. INTERNAL VERIFICATION REQUIRED",
       "Generate/provide transfer PIN only after verification. INTERNAL VERIFICATION",
       "REQUIRED",
       "Tell customer to keep US Mobile line active until the new carrier completes the port.",
@@ -7888,8 +7856,7 @@ export const playbooks: Playbook[] = [
         "If they want to preserve number, mention a pause/snooze/parking option only if current",
         "policy supports it. INTERNAL VERIFICATION REQUIRED",
         "Verify identity through approved method. INTERNAL VERIFICATION REQUIRED",
-        "Provide account number path or account number if support must provide it. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "Provide account number path or account number if support must provide it. INTERNAL VERIFICATION REQUIRED",
         "Generate/provide transfer PIN only after verification. INTERNAL VERIFICATION",
         "REQUIRED",
         "Tell customer to keep US Mobile line active until the new carrier completes the port.",
@@ -8035,8 +8002,7 @@ export const playbooks: Playbook[] = [
       "Do not rely on SMS verification if the SIM/number may be compromised.",
       "Use approved alternate verification, such as registered email/manual verification.",
       "INTERNAL VERIFICATION REQUIRED",
-      "Escalate to security/fraud immediately if unauthorized activity is suspected. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Escalate to security/fraud immediately if unauthorized activity is suspected. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Treat as urgent security case.",
@@ -8045,18 +8011,15 @@ export const playbooks: Playbook[] = [
       "Do not rely on SMS verification if the SIM/number may be compromised.",
       "Use approved alternate verification, such as registered email/manual verification.",
       "INTERNAL VERIFICATION REQUIRED",
-      "Escalate to security/fraud immediately if unauthorized activity is suspected. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Escalate to security/fraud immediately if unauthorized activity is suspected. INTERNAL VERIFICATION REQUIRED"
     ],
     "steps": [
       "Acknowledge urgency and reduce questions to essentials.",
       "Ask whether service was lost suddenly or account-change alerts were received.",
-      "Check account logs for recent SIM/eSIM/port/login/security changes. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check account logs for recent SIM/eSIM/port/login/security changes. INTERNAL VERIFICATION REQUIRED",
       "Initiate approved account protection workflow: freeze/hold SIM changes, port-out, or",
       "sensitive actions if tools/policy allow. INTERNAL VERIFICATION REQUIRED",
-      "Verify identity through a non-SMS method if number compromise is possible. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Verify identity through a non-SMS method if number compromise is possible. INTERNAL VERIFICATION REQUIRED",
       "If unauthorized change is confirmed or strongly suspected, escalate to Security/Fraud",
       "immediately.",
       "Advise customer to secure email, banking, and important accounts using non-SMS",
@@ -8075,12 +8038,10 @@ export const playbooks: Playbook[] = [
       "general": [
         "Acknowledge urgency and reduce questions to essentials.",
         "Ask whether service was lost suddenly or account-change alerts were received.",
-        "Check account logs for recent SIM/eSIM/port/login/security changes. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "Check account logs for recent SIM/eSIM/port/login/security changes. INTERNAL VERIFICATION REQUIRED",
         "Initiate approved account protection workflow: freeze/hold SIM changes, port-out, or",
         "sensitive actions if tools/policy allow. INTERNAL VERIFICATION REQUIRED",
-        "Verify identity through a non-SMS method if number compromise is possible. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "Verify identity through a non-SMS method if number compromise is possible. INTERNAL VERIFICATION REQUIRED",
         "If unauthorized change is confirmed or strongly suspected, escalate to Security/Fraud",
         "immediately.",
         "Advise customer to secure email, banking, and important accounts using non-SMS",
@@ -9121,8 +9082,7 @@ export const playbooks: Playbook[] = [
     "steps": [
       "Ask for exact model number.",
       "Confirm where the device was purchased.",
-      "Check whether the device supports required bands for current network. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check whether the device supports required bands for current network. INTERNAL VERIFICATION REQUIRED",
       "Confirm VoLTE support and that LTE/5G mode is enabled.",
       "If the device lacks key bands, explain hardware limitation clearly.",
       "If the device supports another US Mobile network better, consider network",
@@ -9145,8 +9105,7 @@ export const playbooks: Playbook[] = [
       "general": [
         "Ask for exact model number.",
         "Confirm where the device was purchased.",
-        "Check whether the device supports required bands for current network. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "Check whether the device supports required bands for current network. INTERNAL VERIFICATION REQUIRED",
         "Confirm VoLTE support and that LTE/5G mode is enabled.",
         "If the device lacks key bands, explain hardware limitation clearly.",
         "If the device supports another US Mobile network better, consider network",
@@ -9302,8 +9261,7 @@ export const playbooks: Playbook[] = [
       "REQUIRED",
       "Confirm VoLTE/IMS support and toggle if visible.",
       "Check band support for selected network. INTERNAL VERIFICATION REQUIRED",
-      "Confirm ICCID if physical SIM or eSIM profile state is in question. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Confirm ICCID if physical SIM or eSIM profile state is in question. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Run/check IMEI compatibility. INTERNAL VERIFICATION REQUIRED",
@@ -9311,8 +9269,7 @@ export const playbooks: Playbook[] = [
       "REQUIRED",
       "Confirm VoLTE/IMS support and toggle if visible.",
       "Check band support for selected network. INTERNAL VERIFICATION REQUIRED",
-      "Confirm ICCID if physical SIM or eSIM profile state is in question. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Confirm ICCID if physical SIM or eSIM profile state is in question. INTERNAL VERIFICATION REQUIRED"
     ],
     "steps": [
       "Identify active network.",
@@ -9536,8 +9493,7 @@ export const playbooks: Playbook[] = [
       "Escalate if supported device/network/plan is verified but watch still fails activation.",
       "iPhone / Apple Watch steps:",
       "Confirm iPhone is compatible and paired with the Apple Watch.",
-      "Confirm main phone line network supports the intended watch mode. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Confirm main phone line network supports the intended watch mode. INTERNAL VERIFICATION REQUIRED",
       "Keep Bluetooth ON and phone/watch near each other.",
       "Use approved Apple Watch cellular setup flow.",
       "If Family/standalone setup is used, confirm account/Apple ID requirements per current",
@@ -9567,8 +9523,7 @@ export const playbooks: Playbook[] = [
         "Escalate if supported device/network/plan is verified but watch still fails activation.",
         "iPhone / Apple Watch steps:",
         "Confirm iPhone is compatible and paired with the Apple Watch.",
-        "Confirm main phone line network supports the intended watch mode. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "Confirm main phone line network supports the intended watch mode. INTERNAL VERIFICATION REQUIRED",
         "Keep Bluetooth ON and phone/watch near each other.",
         "Use approved Apple Watch cellular setup flow.",
         "If Family/standalone setup is used, confirm account/Apple ID requirements per current",
@@ -9862,8 +9817,7 @@ export const playbooks: Playbook[] = [
       "Light Speed?"
     ],
     "quickChecks": [
-      "Verify plan, network, destination, and roaming inclusion/add-on eligibility. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Verify plan, network, destination, and roaming inclusion/add-on eligibility. INTERNAL VERIFICATION REQUIRED",
       "Confirm device is carrier-unlocked if Travel eSIM is being considered.",
       "Confirm Wi-Fi Calling and E911 are set up before departure if customer needs SMS/calls",
       "over Wi-Fi. INTERNAL VERIFICATION REQUIRED",
@@ -9873,8 +9827,7 @@ export const playbooks: Playbook[] = [
       "requirements. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
-      "Verify plan, network, destination, and roaming inclusion/add-on eligibility. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Verify plan, network, destination, and roaming inclusion/add-on eligibility. INTERNAL VERIFICATION REQUIRED",
       "Confirm device is carrier-unlocked if Travel eSIM is being considered.",
       "Confirm Wi-Fi Calling and E911 are set up before departure if customer needs SMS/calls",
       "over Wi-Fi. INTERNAL VERIFICATION REQUIRED",
@@ -9894,8 +9847,7 @@ export const playbooks: Playbook[] = [
       "Register E911 address.",
       "Confirm domestic cellular connection has occurred.",
       "Confirm plan/destination support.",
-      "If they need Native Roaming, verify plan/add-on/destination support. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If they need Native Roaming, verify plan/add-on/destination support. INTERNAL VERIFICATION REQUIRED",
       "If they only need data, confirm phone is unlocked and explain Travel eSIM limitations.",
       "Tell customer Travel eSIM does not replace their main number for normal cellular",
       "calls/SMS.",
@@ -9932,8 +9884,7 @@ export const playbooks: Playbook[] = [
         "Register E911 address.",
         "Confirm domestic cellular connection has occurred.",
         "Confirm plan/destination support.",
-        "If they need Native Roaming, verify plan/add-on/destination support. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "If they need Native Roaming, verify plan/add-on/destination support. INTERNAL VERIFICATION REQUIRED",
         "If they only need data, confirm phone is unlocked and explain Travel eSIM limitations.",
         "Tell customer Travel eSIM does not replace their main number for normal cellular",
         "calls/SMS.",
@@ -10271,8 +10222,7 @@ export const playbooks: Playbook[] = [
       "REQUIRED",
       "Confirm Data Roaming is ON.",
       "Confirm APN if data fails.",
-      "Confirm VoLTE/IMS and destination voice/SMS support if calls/SMS fail. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Confirm VoLTE/IMS and destination voice/SMS support if calls/SMS fail. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Confirm Native Roaming vs Travel eSIM.",
@@ -10280,8 +10230,7 @@ export const playbooks: Playbook[] = [
       "REQUIRED",
       "Confirm Data Roaming is ON.",
       "Confirm APN if data fails.",
-      "Confirm VoLTE/IMS and destination voice/SMS support if calls/SMS fail. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Confirm VoLTE/IMS and destination voice/SMS support if calls/SMS fail. INTERNAL VERIFICATION REQUIRED"
     ],
     "steps": [
       "Identify what works: data, calls, SMS, OTP, or none.",
@@ -10843,16 +10792,14 @@ export const playbooks: Playbook[] = [
       "Is the Travel eSIM selected as your Cellular Data line?"
     ],
     "quickChecks": [
-      "Verify Travel eSIM purchase, validity/expiration, and data balance. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Verify Travel eSIM purchase, validity/expiration, and data balance. INTERNAL VERIFICATION REQUIRED",
       "Confirm device is carrier-unlocked.",
       "Confirm Travel eSIM is installed and enabled.",
       "Confirm Travel eSIM is selected for Cellular Data/Mobile Data.",
       "Confirm Data Roaming is ON for the Travel eSIM."
     ],
     "quickSteps": [
-      "Verify Travel eSIM purchase, validity/expiration, and data balance. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Verify Travel eSIM purchase, validity/expiration, and data balance. INTERNAL VERIFICATION REQUIRED",
       "Confirm device is carrier-unlocked.",
       "Confirm Travel eSIM is installed and enabled.",
       "Confirm Travel eSIM is selected for Cellular Data/Mobile Data.",
@@ -11578,8 +11525,7 @@ export const playbooks: Playbook[] = [
       "Acknowledge the billing concern.",
       "Identify what the customer wants refunded.",
       "Check usage and purchase dates internally. INTERNAL VERIFICATION REQUIRED",
-      "Check whether the service/item is eligible under current policy. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check whether the service/item is eligible under current policy. INTERNAL VERIFICATION REQUIRED",
       "If clearly eligible, say you will submit/process through the correct billing path, not that it is",
       "guaranteed unless you have authority and confirmation.",
       "If not eligible, explain policy calmly and offer any available alternative only if supported.",
@@ -11605,8 +11551,7 @@ export const playbooks: Playbook[] = [
       "Acknowledge the billing concern.",
       "Identify what the customer wants refunded.",
       "Check usage and purchase dates internally. INTERNAL VERIFICATION REQUIRED",
-      "Check whether the service/item is eligible under current policy. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check whether the service/item is eligible under current policy. INTERNAL VERIFICATION REQUIRED",
       "If clearly eligible, say you will submit/process through the correct billing path, not that it is",
       "guaranteed unless you have authority and confirmation.",
       "If not eligible, explain policy calmly and offer any available alternative only if supported.",
@@ -11639,7 +11584,12 @@ export const playbooks: Playbook[] = [
         "you were hoping for, so I’ll still document the case clearly if you want it reviewed by Billing."
       ]
     },
-    "copyTemplates": [],
+    "copyTemplates": [
+            {
+                  "label": "Customer Reply — Refund Inquiry",
+                  "text": "I can review your refund request, but I want to be upfront — I need to verify the charge details and policy before I can confirm any credit or refund. I'll check your account now and give you the accurate answer based on what I find."
+            }
+      ],
     "zendeskNote": "Issue: Refund / credit / billing adjustment request \nProduct/charge: [Monthly plan / Annual plan / Top-up / SIM / Shipping / Device / Travel eSIM / \nOther] \nNetwork/line: [Warp / Dark Star / Light Speed / N/A] \nPurchase/renewal date: [X] \nActivation date: [X] \nUsage verified: [Data/calls/texts/hotspot/roaming/top-up] INTERNAL VERIFICATION \nREQUIRED \nPolicy/eligibility: [Eligible / Not eligible / Needs Billing review] \nCustomer request: [Full refund / partial refund / credit / waiver / cancellation] \nAction: [Explained policy / submitted to Billing / declined with explanation / pending info] \nNext action: Billing review or customer confirmation",
     "escalation": {
       "neededWhen": [
@@ -11779,8 +11729,7 @@ export const playbooks: Playbook[] = [
     ],
     "quickChecks": [
       "Verify current plan type and renewal date. INTERNAL VERIFICATION REQUIRED",
-      "Check whether plan change can be scheduled for end of cycle. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check whether plan change can be scheduled for end of cycle. INTERNAL VERIFICATION REQUIRED",
       "Check immediate change impact before customer confirms. INTERNAL VERIFICATION",
       "REQUIRED",
       "Check promo/discount status if price changed. INTERNAL VERIFICATION REQUIRED",
@@ -11803,8 +11752,7 @@ export const playbooks: Playbook[] = [
     ],
     "quickSteps": [
       "Verify current plan type and renewal date. INTERNAL VERIFICATION REQUIRED",
-      "Check whether plan change can be scheduled for end of cycle. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check whether plan change can be scheduled for end of cycle. INTERNAL VERIFICATION REQUIRED",
       "Check immediate change impact before customer confirms. INTERNAL VERIFICATION",
       "REQUIRED",
       "Check promo/discount status if price changed. INTERNAL VERIFICATION REQUIRED",
@@ -11978,47 +11926,37 @@ export const playbooks: Playbook[] = [
     ],
     "quickChecks": [
       "Verify pool balance and affected lines. INTERNAL VERIFICATION REQUIRED",
-      "Check whether auto top-up is enabled and whether it triggered. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check whether auto top-up is enabled and whether it triggered. INTERNAL VERIFICATION REQUIRED",
       "Verify top-up purchase, usage, and rollover eligibility. INTERNAL VERIFICATION",
       "REQUIRED",
-      "Check if a new line was added or access fee/proration changed. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check if a new line was added or access fee/proration changed. INTERNAL VERIFICATION REQUIRED",
       "Confirm AutoPay status if rollover depends on it. INTERNAL VERIFICATION",
       "REQUIRED",
       "Step-by-step troubleshooting / handling:",
       "Confirm plan type: shared pool vs unlimited.",
       "Check pool balance and line usage. INTERNAL VERIFICATION REQUIRED",
       "If pool is empty, explain that adding data/top-up may be needed to restore data.",
-      "If auto top-up triggered, show/explain the trigger event and usage pattern. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "If customer asks about rollover, verify whether the data type is eligible. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "If a top-up was unused and customer requests refund, route to Billing review. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If auto top-up triggered, show/explain the trigger event and usage pattern. INTERNAL VERIFICATION REQUIRED",
+      "If customer asks about rollover, verify whether the data type is eligible. INTERNAL VERIFICATION REQUIRED",
+      "If a top-up was unused and customer requests refund, route to Billing review. INTERNAL VERIFICATION REQUIRED",
       "If pool has data but all lines have no data, escalate for pool provisioning/data block",
       "review. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Verify pool balance and affected lines. INTERNAL VERIFICATION REQUIRED",
-      "Check whether auto top-up is enabled and whether it triggered. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check whether auto top-up is enabled and whether it triggered. INTERNAL VERIFICATION REQUIRED",
       "Verify top-up purchase, usage, and rollover eligibility. INTERNAL VERIFICATION",
       "REQUIRED",
-      "Check if a new line was added or access fee/proration changed. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check if a new line was added or access fee/proration changed. INTERNAL VERIFICATION REQUIRED",
       "Confirm AutoPay status if rollover depends on it. INTERNAL VERIFICATION",
       "REQUIRED",
       "Step-by-step troubleshooting / handling:",
       "Confirm plan type: shared pool vs unlimited.",
       "Check pool balance and line usage. INTERNAL VERIFICATION REQUIRED",
       "If pool is empty, explain that adding data/top-up may be needed to restore data.",
-      "If auto top-up triggered, show/explain the trigger event and usage pattern. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "If customer asks about rollover, verify whether the data type is eligible. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "If a top-up was unused and customer requests refund, route to Billing review. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If auto top-up triggered, show/explain the trigger event and usage pattern. INTERNAL VERIFICATION REQUIRED",
+      "If customer asks about rollover, verify whether the data type is eligible. INTERNAL VERIFICATION REQUIRED",
+      "If a top-up was unused and customer requests refund, route to Billing review. INTERNAL VERIFICATION REQUIRED",
       "If pool has data but all lines have no data, escalate for pool provisioning/data block",
       "review. INTERNAL VERIFICATION REQUIRED"
     ],
@@ -12345,8 +12283,7 @@ export const playbooks: Playbook[] = [
     ],
     "quickChecks": [
       "Check payment/invoice logs for decline reason. INTERNAL VERIFICATION REQUIRED",
-      "Check account/line status and whether service is suspended. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check account/line status and whether service is suspended. INTERNAL VERIFICATION REQUIRED",
       "Check if AutoPay is enabled/disabled. INTERNAL VERIFICATION REQUIRED",
       "Check if repeated attempts triggered security lockout. INTERNAL VERIFICATION",
       "REQUIRED",
@@ -12368,8 +12305,7 @@ export const playbooks: Playbook[] = [
     ],
     "quickSteps": [
       "Check payment/invoice logs for decline reason. INTERNAL VERIFICATION REQUIRED",
-      "Check account/line status and whether service is suspended. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check account/line status and whether service is suspended. INTERNAL VERIFICATION REQUIRED",
       "Check if AutoPay is enabled/disabled. INTERNAL VERIFICATION REQUIRED",
       "Check if repeated attempts triggered security lockout. INTERNAL VERIFICATION",
       "REQUIRED",
@@ -12559,8 +12495,7 @@ export const playbooks: Playbook[] = [
       "If lost/stalled, route Logistics for replacement if eligible. INTERNAL VERIFICATION",
       "REQUIRED",
       "Offer eSIM activation if device supports it and customer wants faster setup.",
-      "If wrong SIM/network, verify intended network and received SIM. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If wrong SIM/network, verify intended network and received SIM. INTERNAL VERIFICATION REQUIRED",
       "If “SIM already used,” check ICCID mapping. INTERNAL VERIFICATION REQUIRED",
       "For shipping fee refund/replacement, use safe Billing/Logistics review language."
     ],
@@ -12580,8 +12515,7 @@ export const playbooks: Playbook[] = [
       "If lost/stalled, route Logistics for replacement if eligible. INTERNAL VERIFICATION",
       "REQUIRED",
       "Offer eSIM activation if device supports it and customer wants faster setup.",
-      "If wrong SIM/network, verify intended network and received SIM. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If wrong SIM/network, verify intended network and received SIM. INTERNAL VERIFICATION REQUIRED",
       "If “SIM already used,” check ICCID mapping. INTERNAL VERIFICATION REQUIRED",
       "For shipping fee refund/replacement, use safe Billing/Logistics review language."
     ],
@@ -12748,10 +12682,8 @@ export const playbooks: Playbook[] = [
       "Identify request: return, exchange, defect/warranty, damaged shipment, or refund status.",
       "Verify delivery date and order. INTERNAL VERIFICATION REQUIRED",
       "Check whether request is inside return window. INTERNAL VERIFICATION REQUIRED",
-      "Check condition requirements and any restocking/shipping terms. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "If return eligible, send/trigger RMA through approved process. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check condition requirements and any restocking/shipping terms. INTERNAL VERIFICATION REQUIRED",
+      "If return eligible, send/trigger RMA through approved process. INTERNAL VERIFICATION REQUIRED",
       "Tell customer not to ship without RMA instructions if required.",
       "Tell customer to remove device locks before return:",
       "iPhone: Find My/iCloud lock off.",
@@ -12772,10 +12704,8 @@ export const playbooks: Playbook[] = [
       "Identify request: return, exchange, defect/warranty, damaged shipment, or refund status.",
       "Verify delivery date and order. INTERNAL VERIFICATION REQUIRED",
       "Check whether request is inside return window. INTERNAL VERIFICATION REQUIRED",
-      "Check condition requirements and any restocking/shipping terms. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "If return eligible, send/trigger RMA through approved process. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Check condition requirements and any restocking/shipping terms. INTERNAL VERIFICATION REQUIRED",
+      "If return eligible, send/trigger RMA through approved process. INTERNAL VERIFICATION REQUIRED",
       "Tell customer not to ship without RMA instructions if required.",
       "Tell customer to remove device locks before return:",
       "iPhone: Find My/iCloud lock off.",
@@ -12811,7 +12741,12 @@ export const playbooks: Playbook[] = [
         "document the request and help start the correct RMA process if the order qualifies."
       ]
     },
-    "copyTemplates": [],
+    "copyTemplates": [
+            {
+                  "label": "Customer Reply — Device Returns",
+                  "text": "I can help you with the return or warranty process. Could you let me know the device model and when you received it? I'll check the return window and warranty status, then walk you through the correct steps."
+            }
+      ],
     "zendeskNote": "Issue: Device return / RMA / warranty \nOrder/device: [Model/order] \nDelivery date: [X] \nRequest type: [Return / Warranty / Exchange / Damaged / Refund status] \nCondition/usage: [X] INTERNAL VERIFICATION REQUIRED \nReturn window: [Eligible / Not eligible / Needs review] \nCustomer advised: Remove Find My/iCloud or Google FRP before return \nInternal checks: Order, delivery, return eligibility, restocking/shipping terms, RMA status \nINTERNAL VERIFICATION REQUIRED \nAction: RMA initiated / warranty path explained / escalated Billing/Warehouse \nNext action: Await device return/inspection or review",
     "escalation": {
       "neededWhen": [
@@ -13087,16 +13022,14 @@ export const playbooks: Playbook[] = [
       "Force-close app, update app, log out/in.",
       "Try web dashboard to check app-vs-web parity.",
       "Turn off VPN, Private Relay, ad blocker, or Private DNS for testing.",
-      "Check whether there is a known platform issue or account lock. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check whether there is a known platform issue or account lock. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Ask app version, OS version, and device model.",
       "Force-close app, update app, log out/in.",
       "Try web dashboard to check app-vs-web parity.",
       "Turn off VPN, Private Relay, ad blocker, or Private DNS for testing.",
-      "Check whether there is a known platform issue or account lock. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Check whether there is a known platform issue or account lock. INTERNAL VERIFICATION REQUIRED"
     ],
     "steps": [
       "Capture exact error text and screenshot if available.",
@@ -13108,8 +13041,7 @@ export const playbooks: Playbook[] = [
       "If iPhone, turn off iCloud Private Relay/VPN temporarily.",
       "Ask customer to try the same action on the web dashboard.",
       "If web works but app fails, document as app-specific bug candidate.",
-      "If both app and web fail, check account/API/platform status internally. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If both app and web fail, check account/API/platform status internally. INTERNAL VERIFICATION REQUIRED",
       "If login/account locked/2FA issue appears, use secure account verification flow.",
       "INTERNAL VERIFICATION REQUIRED"
     ],
@@ -13138,8 +13070,7 @@ export const playbooks: Playbook[] = [
         "If iPhone, turn off iCloud Private Relay/VPN temporarily.",
         "Ask customer to try the same action on the web dashboard.",
         "If web works but app fails, document as app-specific bug candidate.",
-        "If both app and web fail, check account/API/platform status internally. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "If both app and web fail, check account/API/platform status internally. INTERNAL VERIFICATION REQUIRED",
         "If login/account locked/2FA issue appears, use secure account verification flow.",
         "INTERNAL VERIFICATION REQUIRED"
       ]
@@ -13702,8 +13633,7 @@ export const playbooks: Playbook[] = [
     ],
     "quickChecks": [
       "Confirm goal: Teleport vs device transfer.",
-      "Verify account/security eligibility if credentials or transfer action are needed. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Verify account/security eligibility if credentials or transfer action are needed. INTERNAL VERIFICATION REQUIRED",
       "Verify device compatibility for destination network. INTERNAL VERIFICATION",
       "REQUIRED",
       "Check Teleport/network-switch limits or status. INTERNAL VERIFICATION REQUIRED",
@@ -13717,8 +13647,7 @@ export const playbooks: Playbook[] = [
       "REQUIRED",
       "Guide customer through current dashboard/app Teleport or network-switch flow if",
       "self-service is available.",
-      "If credentials are required, provide only through approved verified process. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If credentials are required, provide only through approved verified process. INTERNAL VERIFICATION REQUIRED",
       "After switch completes, install new eSIM or insert correct pSIM if required.",
       "Delete/disable old inactive eSIM only after new service is confirmed.",
       "Apply destination-network APN if data/MMS fails.",
@@ -13736,8 +13665,7 @@ export const playbooks: Playbook[] = [
     ],
     "quickSteps": [
       "Confirm goal: Teleport vs device transfer.",
-      "Verify account/security eligibility if credentials or transfer action are needed. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Verify account/security eligibility if credentials or transfer action are needed. INTERNAL VERIFICATION REQUIRED",
       "Verify device compatibility for destination network. INTERNAL VERIFICATION",
       "REQUIRED",
       "Check Teleport/network-switch limits or status. INTERNAL VERIFICATION REQUIRED",
@@ -13751,8 +13679,7 @@ export const playbooks: Playbook[] = [
       "REQUIRED",
       "Guide customer through current dashboard/app Teleport or network-switch flow if",
       "self-service is available.",
-      "If credentials are required, provide only through approved verified process. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If credentials are required, provide only through approved verified process. INTERNAL VERIFICATION REQUIRED",
       "After switch completes, install new eSIM or insert correct pSIM if required.",
       "Delete/disable old inactive eSIM only after new service is confirmed.",
       "Apply destination-network APN if data/MMS fails.",
@@ -14161,10 +14088,8 @@ export const playbooks: Playbook[] = [
       "Generate/provide transfer PIN only through approved verified support process.",
       "INTERNAL VERIFICATION REQUIRED",
       "Tell customer to keep the line active until the new carrier completes the transfer.",
-      "Explain cancellation/billing impact safely and only after verification. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "If customer fails verification or shows fraud indicators, escalate Security. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Explain cancellation/billing impact safely and only after verification. INTERNAL VERIFICATION REQUIRED",
+      "If customer fails verification or shows fraud indicators, escalate Security. INTERNAL VERIFICATION REQUIRED"
     ],
     "quickSteps": [
       "Verify identity through approved flow. INTERNAL VERIFICATION REQUIRED",
@@ -14181,10 +14106,8 @@ export const playbooks: Playbook[] = [
       "Generate/provide transfer PIN only through approved verified support process.",
       "INTERNAL VERIFICATION REQUIRED",
       "Tell customer to keep the line active until the new carrier completes the transfer.",
-      "Explain cancellation/billing impact safely and only after verification. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "If customer fails verification or shows fraud indicators, escalate Security. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Explain cancellation/billing impact safely and only after verification. INTERNAL VERIFICATION REQUIRED",
+      "If customer fails verification or shows fraud indicators, escalate Security. INTERNAL VERIFICATION REQUIRED"
     ],
     "steps": [],
     "deviceSpecificSteps": {
@@ -14324,12 +14247,10 @@ export const playbooks: Playbook[] = [
     "quickChecks": [
       "For watch: verify network, watch model, host device, and plan/add-on eligibility.",
       "INTERNAL VERIFICATION REQUIRED",
-      "For roaming: verify destination, plan/add-on, and domestic usage if required. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "For roaming: verify destination, plan/add-on, and domestic usage if required. INTERNAL VERIFICATION REQUIRED",
       "Confirm app/dashboard is updated and accessible.",
       "Confirm device settings: Data Roaming/Wi-Fi Calling/watch pairing.",
-      "Escalate if add-on/provisioning succeeds but service does not work. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Escalate if add-on/provisioning succeeds but service does not work. INTERNAL VERIFICATION REQUIRED",
       "Step-by-step flow — watch:",
       "Confirm watch type: Apple Watch or Pixel Watch.",
       "Confirm host line network and eligibility. INTERNAL VERIFICATION REQUIRED",
@@ -14360,12 +14281,10 @@ export const playbooks: Playbook[] = [
     "quickSteps": [
       "For watch: verify network, watch model, host device, and plan/add-on eligibility.",
       "INTERNAL VERIFICATION REQUIRED",
-      "For roaming: verify destination, plan/add-on, and domestic usage if required. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "For roaming: verify destination, plan/add-on, and domestic usage if required. INTERNAL VERIFICATION REQUIRED",
       "Confirm app/dashboard is updated and accessible.",
       "Confirm device settings: Data Roaming/Wi-Fi Calling/watch pairing.",
-      "Escalate if add-on/provisioning succeeds but service does not work. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Escalate if add-on/provisioning succeeds but service does not work. INTERNAL VERIFICATION REQUIRED",
       "Step-by-step flow — watch:",
       "Confirm watch type: Apple Watch or Pixel Watch.",
       "Confirm host line network and eligibility. INTERNAL VERIFICATION REQUIRED",
@@ -14728,10 +14647,8 @@ export const playbooks: Playbook[] = [
       "If locked, advise customer to contact the original carrier or seller to unlock the device.",
       "If device does not support eSIM, explain that eSIM cannot be installed and check pSIM",
       "option.",
-      "If unlocked and eSIM-compatible, verify IMEI/EID and profile state. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "If unlocked but still rejected, escalate for compatibility/provisioning review. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "If unlocked and eSIM-compatible, verify IMEI/EID and profile state. INTERNAL VERIFICATION REQUIRED",
+      "If unlocked but still rejected, escalate for compatibility/provisioning review. INTERNAL VERIFICATION REQUIRED"
     ],
     "deviceSpecificSteps": {
       "iphone": [
@@ -14753,10 +14670,8 @@ export const playbooks: Playbook[] = [
         "If locked, advise customer to contact the original carrier or seller to unlock the device.",
         "If device does not support eSIM, explain that eSIM cannot be installed and check pSIM",
         "option.",
-        "If unlocked and eSIM-compatible, verify IMEI/EID and profile state. INTERNAL",
-        "VERIFICATION REQUIRED",
-        "If unlocked but still rejected, escalate for compatibility/provisioning review. INTERNAL",
-        "VERIFICATION REQUIRED"
+        "If unlocked and eSIM-compatible, verify IMEI/EID and profile state. INTERNAL VERIFICATION REQUIRED",
+        "If unlocked but still rejected, escalate for compatibility/provisioning review. INTERNAL VERIFICATION REQUIRED"
       ]
     },
     "copyTemplates": [
@@ -15080,8 +14995,7 @@ export const playbooks: Playbook[] = [
     "steps": [
       "Ask for exact error and whether SMS or MMS is affected.",
       "Test plain SMS to one contact.",
-      "If plain SMS fails with Error 97, check SMS feature/plan/routing internally. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "If plain SMS fails with Error 97, check SMS feature/plan/routing internally. INTERNAL VERIFICATION REQUIRED",
       "If MMS/group fails, turn Wi-Fi off and test mobile data.",
       "Verify APN/MMSC.",
       "If Android/Google Messages:",
@@ -15089,8 +15003,7 @@ export const playbooks: Playbook[] = [
       "Clear Messages cache.",
       "Restart.",
       "Re-test SMS and MMS separately.",
-      "Escalate if errors persist after feature, APN, app, and routing checks. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Escalate if errors persist after feature, APN, app, and routing checks. INTERNAL VERIFICATION REQUIRED"
     ],
     "deviceSpecificSteps": {
       "iphone": [
@@ -15117,8 +15030,7 @@ export const playbooks: Playbook[] = [
       "general": [
         "Ask for exact error and whether SMS or MMS is affected.",
         "Test plain SMS to one contact.",
-        "If plain SMS fails with Error 97, check SMS feature/plan/routing internally. INTERNAL",
-        "VERIFICATION REQUIRED",
+        "If plain SMS fails with Error 97, check SMS feature/plan/routing internally. INTERNAL VERIFICATION REQUIRED",
         "If MMS/group fails, turn Wi-Fi off and test mobile data.",
         "Verify APN/MMSC.",
         "If Android/Google Messages:",
@@ -15126,8 +15038,7 @@ export const playbooks: Playbook[] = [
         "Clear Messages cache.",
         "Restart.",
         "Re-test SMS and MMS separately.",
-        "Escalate if errors persist after feature, APN, app, and routing checks. INTERNAL",
-        "VERIFICATION REQUIRED"
+        "Escalate if errors persist after feature, APN, app, and routing checks. INTERNAL VERIFICATION REQUIRED"
       ]
     },
     "copyTemplates": [],
@@ -15275,8 +15186,7 @@ export const playbooks: Playbook[] = [
       "Restart phone.",
       "Reset Network Settings if needed.",
       "Test web browsing with Wi-Fi off.",
-      "Escalate if APN/account/device checks pass and data still fails. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Escalate if APN/account/device checks pass and data still fails. INTERNAL VERIFICATION REQUIRED"
     ],
     "deviceSpecificSteps": {
       "iphone": [
@@ -15310,8 +15220,7 @@ export const playbooks: Playbook[] = [
         "Restart phone.",
         "Reset Network Settings if needed.",
         "Test web browsing with Wi-Fi off.",
-        "Escalate if APN/account/device checks pass and data still fails. INTERNAL",
-        "VERIFICATION REQUIRED"
+        "Escalate if APN/account/device checks pass and data still fails. INTERNAL VERIFICATION REQUIRED"
       ]
     },
     "copyTemplates": [
@@ -15465,8 +15374,7 @@ export const playbooks: Playbook[] = [
       "Confirm Network Selection is Automatic.",
       "Check Carrier Lock/device compatibility.",
       "Reset Network Settings if basic checks fail.",
-      "Escalate if account/device/SIM checks pass and SOS/No Service persists. INTERNAL",
-      "VERIFICATION REQUIRED"
+      "Escalate if account/device/SIM checks pass and SOS/No Service persists. INTERNAL VERIFICATION REQUIRED"
     ],
     "deviceSpecificSteps": {
       "iphone": [
@@ -15492,8 +15400,7 @@ export const playbooks: Playbook[] = [
         "Confirm Network Selection is Automatic.",
         "Check Carrier Lock/device compatibility.",
         "Reset Network Settings if basic checks fail.",
-        "Escalate if account/device/SIM checks pass and SOS/No Service persists. INTERNAL",
-        "VERIFICATION REQUIRED"
+        "Escalate if account/device/SIM checks pass and SOS/No Service persists. INTERNAL VERIFICATION REQUIRED"
       ]
     },
     "copyTemplates": [
@@ -15694,7 +15601,12 @@ export const playbooks: Playbook[] = [
         "REQUIRED"
       ]
     },
-    "copyTemplates": [],
+    "copyTemplates": [
+            {
+                  "label": "Customer Reply — Payment Decline",
+                  "text": "I can see your payment was declined. This usually happens due to insufficient funds, card expiration, bank security blocks, or incorrect billing info. Could you double-check the card details on file? I'll check the exact decline reason on my end to give you the right fix."
+            }
+      ],
     "zendeskNote": "Error exact: [incorrect_zip / card_declined / payment failed / too many attempts] \nTrigger: [AutoPay / manual payment / renewal / plan change] \nService status: [Active / suspended / pending] \nPayment status: [failed / succeeded / pending] \nInternal checks: Payment logs, invoice, AutoPay, gateway response, security lockout \nINTERNAL VERIFICATION REQUIRED \nAction: [Advised ZIP match / alternate card / Billing escalation / Pay My Bill] \nResult: [Resolved / pending / escalated]",
     "escalation": {
       "neededWhen": [
@@ -16001,20 +15913,16 @@ export const playbooks: Playbook[] = [
     "quickChecks": [
       "For app/dashboard: log out/in, clear cache, update app, try web.",
       "Turn off VPN, Private Relay, ad blocker, or Private DNS.",
-      "For Wi-Fi Calling: verify E911 and Wi-Fi Calling feature state. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "For Personal Hotspot: verify plan/hotspot allowance, APN, and entitlement. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "For Wi-Fi Calling: verify E911 and Wi-Fi Calling feature state. INTERNAL VERIFICATION REQUIRED",
+      "For Personal Hotspot: verify plan/hotspot allowance, APN, and entitlement. INTERNAL VERIFICATION REQUIRED",
       "For Account locked: use secure account verification. INTERNAL VERIFICATION",
       "REQUIRED"
     ],
     "quickSteps": [
       "For app/dashboard: log out/in, clear cache, update app, try web.",
       "Turn off VPN, Private Relay, ad blocker, or Private DNS.",
-      "For Wi-Fi Calling: verify E911 and Wi-Fi Calling feature state. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "For Personal Hotspot: verify plan/hotspot allowance, APN, and entitlement. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "For Wi-Fi Calling: verify E911 and Wi-Fi Calling feature state. INTERNAL VERIFICATION REQUIRED",
+      "For Personal Hotspot: verify plan/hotspot allowance, APN, and entitlement. INTERNAL VERIFICATION REQUIRED",
       "For Account locked: use secure account verification. INTERNAL VERIFICATION",
       "REQUIRED"
     ],
@@ -16100,7 +16008,12 @@ export const playbooks: Playbook[] = [
         "Follow secure unlock/reset flow. INTERNAL VERIFICATION REQUIRED"
       ]
     },
-    "copyTemplates": [],
+    "copyTemplates": [
+            {
+                  "label": "Customer Reply — App Error",
+                  "text": "I can see you're getting an error in the app or dashboard. Could you tell me the exact error message and whether it happens on the mobile app, web dashboard, or both? I'll check your account status while you try clearing the app cache and logging in again."
+            }
+      ],
     "zendeskNote": "Error exact: [Something went wrong / Session expired / Contact carrier / Account locked / Set up \nPersonal Hotspot] \nLocation of error: [App / Web / iPhone settings / Android settings / Wi-Fi Calling / Hotspot] \nPlatform/device: [X] \nFlow attempted: [Login / payment / Wi-Fi Calling / hotspot / eSIM / plan change] \nSteps tried: App update, cache clear, web parity, VPN/Private Relay off, E911/APN/hotspot \nchecks \nInternal checks: Account lock, E911, Wi-Fi Calling feature, hotspot entitlement, platform/API \nstatus INTERNAL VERIFICATION REQUIRED \nResult: [Resolved / escalated]",
     "escalation": {
       "neededWhen": [
@@ -16684,7 +16597,12 @@ export const playbooks: Playbook[] = [
     "quickSteps": [],
     "steps": [],
     "deviceSpecificSteps": {},
-    "copyTemplates": [],
+    "copyTemplates": [
+            {
+                  "label": "Internal Note Template",
+                  "text": "Issue: [Brief description]\nNetwork: [X]\nDevice/OS: [X]\nSteps taken: [X]\nResult: [X]\nInternal checks: [X]\nNext action: [Resolved / Escalated / Waiting]\nSeverity: [Low / Medium / High / Critical]"
+            }
+      ],
     "zendeskNote": "",
     "escalation": {
       "neededWhen": [
@@ -17202,10 +17120,8 @@ export const playbooks: Playbook[] = [
       "If suspected SIM swap/ATO, do not use SMS verification.",
       "Check recent SIM/eSIM/port/login/password changes. INTERNAL VERIFICATION",
       "REQUIRED",
-      "Initiate approved account protection/freeze workflow if available. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "Escalate to Security/Fraud/Leadership immediately when risk is credible. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Initiate approved account protection/freeze workflow if available. INTERNAL VERIFICATION REQUIRED",
+      "Escalate to Security/Fraud/Leadership immediately when risk is credible. INTERNAL VERIFICATION REQUIRED",
       "Step-by-step safety flow:",
       "Stop normal troubleshooting if customer reports danger, medical emergency, domestic",
       "violence, or fraud.",
@@ -17249,10 +17165,8 @@ export const playbooks: Playbook[] = [
       "If suspected SIM swap/ATO, do not use SMS verification.",
       "Check recent SIM/eSIM/port/login/password changes. INTERNAL VERIFICATION",
       "REQUIRED",
-      "Initiate approved account protection/freeze workflow if available. INTERNAL",
-      "VERIFICATION REQUIRED",
-      "Escalate to Security/Fraud/Leadership immediately when risk is credible. INTERNAL",
-      "VERIFICATION REQUIRED",
+      "Initiate approved account protection/freeze workflow if available. INTERNAL VERIFICATION REQUIRED",
+      "Escalate to Security/Fraud/Leadership immediately when risk is credible. INTERNAL VERIFICATION REQUIRED",
       "Step-by-step safety flow:",
       "Stop normal troubleshooting if customer reports danger, medical emergency, domestic",
       "violence, or fraud.",
@@ -18601,5 +18515,1989 @@ export const playbooks: Playbook[] = [
     ],
     "lastUpdated": "June 2026",
     "sourceDoc": "Batch 13"
+  }
+,
+  {
+      "id": "reply-starter-general-troubleshooting",
+      "title": "Starter Reply — General Troubleshooting",
+      "category": "reply-templates",
+      "secondaryCategories": [],
+      "priority": "normal",
+      "tags": [
+          "reply-templates",
+          "batch12"
+      ],
+      "keywords": [
+          "starter",
+          "reply",
+          "troubleshooting",
+          "first reply",
+          "opening",
+          "template"
+      ],
+      "customerPhrases": [
+          "need help",
+          "something is wrong",
+          "not working"
+      ],
+      "preview": {
+          "problem": "Customer reports a general issue — need a strong opening reply.",
+          "firstQuestion": "What exactly is happening?",
+          "firstAction": "Acknowledge the issue and ask one specific question.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this as your first reply for general troubleshooting tickets where the issue type is not yet clear.",
+      "useWhen": "Use as the opening reply when a customer reports a general or unclear issue and you need to gather more information.",
+      "doNotUseWhen": "Do not use when the issue is already identified — use a specific playbook reply instead.",
+      "aliases": [
+          "starter reply",
+          "general troubleshooting reply",
+          "opening reply"
+      ],
+      "symptoms": [],
+      "intent": [
+          "Template"
+      ],
+      "customerQuestions": [
+          "What exactly is happening?",
+          "When did this start?",
+          "What device and OS are you using?"
+      ],
+      "quickChecks": [
+          "Personalize the first sentence.",
+          "Ask only one or two targeted questions."
+      ],
+      "quickSteps": [
+          "Read the customer's message carefully.",
+          "Pick the closest issue category.",
+          "Customize the opening reply below.",
+          "Ask one specific follow-up question."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Starter Reply — General Troubleshooting",
+              "text": "Hi [Name], thanks for reaching out! I can see you're having trouble with [brief issue summary]. I want to make sure we fix this quickly, so could you let me know: [one specific question]? I'll start checking things on my end in the meantime."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "reply-angry-customer-de-escalation",
+          "reply-waiting-for-customer-info"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-ask-device-sim-network-info",
+      "title": "Ask Device / SIM / Network Info",
+      "category": "reply-templates",
+      "secondaryCategories": [],
+      "priority": "normal",
+      "tags": [
+          "reply-templates",
+          "batch12"
+      ],
+      "keywords": [
+          "device",
+          "sim",
+          "network",
+          "info",
+          "gather",
+          "template"
+      ],
+      "customerPhrases": [],
+      "preview": {
+          "problem": "Need device, SIM, or network details from the customer.",
+          "firstQuestion": "What device and OS version are you using?",
+          "firstAction": "Send a concise info-gathering reply.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this template when you need the customer's device model, OS, SIM type, or network info to proceed with troubleshooting.",
+      "useWhen": "Use when you need device, SIM, or network details before you can troubleshoot further.",
+      "aliases": [
+          "ask device info",
+          "device info reply",
+          "sim info reply",
+          "network info reply"
+      ],
+      "symptoms": [],
+      "intent": [
+          "Ask Customer",
+          "Template"
+      ],
+      "customerQuestions": [
+          "What device are you using? (e.g., iPhone 15, Galaxy S24)",
+          "What is your OS version?",
+          "Are you using a physical SIM or eSIM?"
+      ],
+      "quickChecks": [
+          "Keep the question list short — 3 max.",
+          "Don't repeat what the customer already told you."
+      ],
+      "quickSteps": [
+          "Check what info the customer already provided.",
+          "Ask only for the missing details.",
+          "Send the template below, removing any fields already known."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Ask Device / SIM / Network Info",
+              "text": "To narrow this down, could you share a few quick details?\n\n1. Device model (e.g., iPhone 15 Pro, Galaxy S24)\n2. OS version (Settings > About Phone)\n3. Physical SIM or eSIM?\n\nThis helps me check compatibility and settings on my end."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "reply-starter-general-troubleshooting"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-no-service-sos-first",
+      "title": "No Service / SOS First Reply",
+      "category": "reply-templates",
+      "secondaryCategories": [
+          "network-signal"
+      ],
+      "priority": "important",
+      "tags": [
+          "reply-templates",
+          "network-signal",
+          "batch12"
+      ],
+      "keywords": [
+          "no service",
+          "sos",
+          "first reply",
+          "template"
+      ],
+      "customerPhrases": [
+          "no service",
+          "sos only",
+          "no bars",
+          "searching"
+      ],
+      "preview": {
+          "problem": "Customer reports no service or SOS — need a fast first reply.",
+          "firstQuestion": "Did this start suddenly or after a change?",
+          "firstAction": "Acknowledge urgency and start line-side check.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this as your first reply when a customer reports no service, SOS only, or searching.",
+      "useWhen": "Use as the first reply for any no-service or SOS ticket.",
+      "aliases": [
+          "no service first reply",
+          "sos first reply"
+      ],
+      "symptoms": [
+          "no service",
+          "sos only",
+          "searching",
+          "no bars"
+      ],
+      "intent": [
+          "Template",
+          "Troubleshoot"
+      ],
+      "customerQuestions": [
+          "Did this start suddenly, or after activation, port-in, Teleport, or device change?",
+          "Have you tried toggling Airplane Mode?"
+      ],
+      "quickChecks": [
+          "Don't ask the customer to restart before checking line status."
+      ],
+      "quickSteps": [
+          "Acknowledge the urgency.",
+          "Send the first reply below.",
+          "Check line status internally while waiting for customer response."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "No Service / SOS — First Reply",
+              "text": "I understand your line is showing SOS / no service, so I don't want to waste your time with random steps. I'm checking your line status and activation state right now. While I do that, could you try toggling Airplane Mode ON for 30 seconds, then OFF? That forces a fresh network registration and will help me tell if this is a device-side or account-side issue."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "no-service-sos-only",
+          "reply-starter-general-troubleshooting"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-data-not-working-first",
+      "title": "Data Not Working First Reply",
+      "category": "reply-templates",
+      "secondaryCategories": [
+          "apn-data"
+      ],
+      "priority": "normal",
+      "tags": [
+          "reply-templates",
+          "apn-data",
+          "batch12"
+      ],
+      "keywords": [
+          "data",
+          "not working",
+          "internet",
+          "first reply",
+          "template"
+      ],
+      "customerPhrases": [
+          "data not working",
+          "no internet",
+          "bars but no data",
+          "can't browse"
+      ],
+      "preview": {
+          "problem": "Customer reports data not working — need a fast first reply.",
+          "firstQuestion": "Do you have signal bars but no internet, or no bars at all?",
+          "firstAction": "Distinguish between signal issue and data/APN issue.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this as your first reply when a customer reports data not working, no internet, or bars-but-no-data.",
+      "useWhen": "Use as the first reply for any data/internet not working ticket.",
+      "aliases": [
+          "data not working first reply",
+          "no internet first reply"
+      ],
+      "symptoms": [
+          "data not working",
+          "no internet",
+          "bars but no data"
+      ],
+      "intent": [
+          "Template",
+          "Troubleshoot"
+      ],
+      "customerQuestions": [
+          "Do you have signal bars but no internet, or no bars at all?",
+          "Is Wi-Fi turned off during testing?"
+      ],
+      "quickChecks": [
+          "Make sure the customer tests with Wi-Fi OFF."
+      ],
+      "quickSteps": [
+          "Acknowledge the issue.",
+          "Send the first reply below.",
+          "Check data balance and plan state internally."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Data Not Working — First Reply",
+              "text": "I can see you're having trouble with mobile data, so let's isolate this quickly. Could you:\n\n1. Turn Wi-Fi OFF completely (so we test cellular data only)\n2. Toggle Airplane Mode ON for 30 seconds, then OFF\n3. Try loading a website or app\n\nWhile you test, I'm checking your data balance and APN settings on my end."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "apn-data-troubleshooting",
+          "reply-starter-general-troubleshooting"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-esim-install-first",
+      "title": "eSIM Install First Reply",
+      "category": "reply-templates",
+      "secondaryCategories": [
+          "esim-sim"
+      ],
+      "priority": "normal",
+      "tags": [
+          "reply-templates",
+          "esim-sim",
+          "batch12"
+      ],
+      "keywords": [
+          "esim",
+          "install",
+          "download",
+          "qr",
+          "first reply",
+          "template"
+      ],
+      "customerPhrases": [
+          "esim not installing",
+          "qr code not working",
+          "esim download failed"
+      ],
+      "preview": {
+          "problem": "Customer needs help installing an eSIM — need a clear first reply.",
+          "firstQuestion": "Are you scanning a QR code or using the app to install?",
+          "firstAction": "Confirm install method and device compatibility.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this as your first reply when a customer needs help installing or activating an eSIM.",
+      "useWhen": "Use as the first reply for eSIM installation issues or questions.",
+      "aliases": [
+          "esim install first reply",
+          "esim download first reply"
+      ],
+      "symptoms": [
+          "esim not installing",
+          "qr code failed",
+          "esim download error"
+      ],
+      "intent": [
+          "Template",
+          "Fix"
+      ],
+      "customerQuestions": [
+          "Are you installing via QR code or through the US Mobile app?",
+          "What device are you using?"
+      ],
+      "quickChecks": [
+          "Confirm the device supports eSIM.",
+          "Confirm the customer is on Wi-Fi for download."
+      ],
+      "quickSteps": [
+          "Confirm device eSIM support.",
+          "Send the first reply below.",
+          "Guide through the correct install method."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "eSIM Install — First Reply",
+              "text": "I'll help you get the eSIM installed. A couple of quick things first:\n\n1. Make sure you're connected to Wi-Fi (eSIM download needs an internet connection)\n2. Go to Settings > Cellular > Add eSIM (iPhone) or Settings > Connections > SIM Manager (Android)\n3. If you have a QR code, scan it from there\n\nIf you get any error during the scan or download, please screenshot the exact message and send it to me — that tells me exactly where to look."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "esim-activation-troubleshooting",
+          "reply-ask-device-sim-network-info"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-port-in-delay",
+      "title": "Port-In Delay Reply",
+      "category": "reply-templates",
+      "secondaryCategories": [
+          "port-in-out"
+      ],
+      "priority": "normal",
+      "tags": [
+          "reply-templates",
+          "port-in-out",
+          "batch12"
+      ],
+      "keywords": [
+          "port",
+          "delay",
+          "transfer",
+          "number",
+          "waiting",
+          "template"
+      ],
+      "customerPhrases": [
+          "port taking too long",
+          "number not transferred",
+          "still waiting for port"
+      ],
+      "preview": {
+          "problem": "Customer reports a port-in delay — need a reassuring reply.",
+          "firstQuestion": "When did you submit the port request?",
+          "firstAction": "Check port status internally.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this as your first reply when a customer reports their port-in is delayed or still pending.",
+      "useWhen": "Use for port-in delay or port pending tickets.",
+      "aliases": [
+          "port in delay reply",
+          "port pending reply",
+          "transfer delay reply"
+      ],
+      "symptoms": [
+          "port delayed",
+          "number not transferred yet",
+          "port still pending"
+      ],
+      "intent": [
+          "Template",
+          "Explain"
+      ],
+      "customerQuestions": [
+          "When did you submit the port request?",
+          "Did you receive any rejection or error notification?"
+      ],
+      "quickChecks": [
+          "Check port status internally before replying."
+      ],
+      "quickSteps": [
+          "Check port status.",
+          "Send the reply below.",
+          "Follow up with specific status if available."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Port-In Delay — Reply",
+              "text": "I understand waiting for your number to transfer is stressful, especially when you need your line working. I'm pulling up the port status right now. Most ports complete within a few hours, but some carriers take up to 24–48 hours depending on verification.\n\nI'll have an update for you shortly with the exact status and whether any action is needed on your end."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "port-in-troubleshooting",
+          "reply-starter-general-troubleshooting"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-bank-otp-short-code",
+      "title": "Bank OTP / Short Code Reply",
+      "category": "reply-templates",
+      "secondaryCategories": [
+          "messaging-calls-voicemail"
+      ],
+      "priority": "important",
+      "tags": [
+          "reply-templates",
+          "messaging-calls-voicemail",
+          "batch12"
+      ],
+      "keywords": [
+          "bank",
+          "otp",
+          "short code",
+          "verification",
+          "2fa",
+          "sms",
+          "template"
+      ],
+      "customerPhrases": [
+          "not getting bank texts",
+          "otp not arriving",
+          "verification code not coming",
+          "short code blocked"
+      ],
+      "preview": {
+          "problem": "Customer not receiving bank OTPs or short code texts.",
+          "firstQuestion": "Which bank or service is sending the code?",
+          "firstAction": "Check SMS feature and short code routing.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this when a customer reports not receiving bank OTPs, 2FA codes, or other short code messages.",
+      "useWhen": "Use for bank OTP, short code, or 2FA verification code issues.",
+      "aliases": [
+          "bank otp reply",
+          "short code reply",
+          "2fa reply",
+          "verification code reply"
+      ],
+      "symptoms": [
+          "otp not arriving",
+          "bank text not received",
+          "verification code missing"
+      ],
+      "intent": [
+          "Template",
+          "Troubleshoot"
+      ],
+      "customerQuestions": [
+          "Which bank or service are you trying to receive the code from?",
+          "Do regular texts from normal phone numbers work?"
+      ],
+      "quickChecks": [
+          "Check if regular SMS works.",
+          "Check if short codes are blocked."
+      ],
+      "quickSteps": [
+          "Confirm regular SMS works.",
+          "Send the reply below.",
+          "Check short code routing internally."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Bank OTP / Short Code — Reply",
+              "text": "I understand how important it is to receive your verification codes. Let me check the messaging setup on your line. In the meantime, could you:\n\n1. Confirm that regular text messages from normal phone numbers are coming through\n2. Check if the bank/service has an option to send the code via call instead of text\n3. Make sure you don't have any call/text blocking apps enabled\n\nSome short codes can take a few minutes to route after a recent activation or port — I'll check if that's the case here."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "messaging-routing-errors-error-97",
+          "reply-starter-general-troubleshooting"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-billing-refund-safe-language",
+      "title": "Billing / Refund Safe Language",
+      "category": "reply-templates",
+      "secondaryCategories": [
+          "plans-billing"
+      ],
+      "priority": "important",
+      "tags": [
+          "reply-templates",
+          "plans-billing",
+          "batch12"
+      ],
+      "keywords": [
+          "billing",
+          "refund",
+          "credit",
+          "safe language",
+          "template"
+      ],
+      "customerPhrases": [
+          "want a refund",
+          "wrong charge",
+          "overcharged",
+          "credit"
+      ],
+      "preview": {
+          "problem": "Customer asks about billing, refund, or credit — need safe language.",
+          "firstQuestion": "Which charge are you referring to?",
+          "firstAction": "Review the charge before making any promises.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this when a customer asks about billing, refunds, or credits. Never promise a refund before verifying the charge.",
+      "useWhen": "Use for any billing dispute, refund request, or credit question.",
+      "aliases": [
+          "billing reply",
+          "refund reply",
+          "credit reply",
+          "safe billing language"
+      ],
+      "symptoms": [
+          "wrong charge",
+          "unexpected bill",
+          "overcharged"
+      ],
+      "intent": [
+          "Template",
+          "Explain"
+      ],
+      "customerQuestions": [
+          "Which specific charge are you referring to?",
+          "When did you notice this charge?"
+      ],
+      "quickChecks": [
+          "Never promise a refund before verifying.",
+          "Use safe language — no guarantees."
+      ],
+      "quickSteps": [
+          "Identify the specific charge.",
+          "Review account and billing details.",
+          "Send the safe-language reply below."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Billing / Refund — Safe Language Reply",
+              "text": "I can review this for you, but I don't want to promise a credit or refund before checking the account details. I'll verify the charge, usage, and policy first, then give you the correct path.\n\nCould you confirm which specific charge you're referring to, and when you first noticed it?"
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "autopay-payment-failures-taxes",
+          "reply-angry-customer-de-escalation"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-escalation-update",
+      "title": "Escalation Update Reply",
+      "category": "reply-templates",
+      "secondaryCategories": [
+          "escalations"
+      ],
+      "priority": "normal",
+      "tags": [
+          "reply-templates",
+          "escalations",
+          "batch12"
+      ],
+      "keywords": [
+          "escalation",
+          "update",
+          "follow up",
+          "internal review",
+          "template"
+      ],
+      "customerPhrases": [
+          "any update",
+          "what happened",
+          "still waiting",
+          "escalated"
+      ],
+      "preview": {
+          "problem": "Customer is waiting for an escalation update.",
+          "firstQuestion": "N/A — this is a proactive update reply.",
+          "firstAction": "Send an honest update with what you know.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this when you need to update a customer about an ongoing escalation or internal review.",
+      "useWhen": "Use to update the customer on a pending escalation or internal review.",
+      "aliases": [
+          "escalation update reply",
+          "follow up reply",
+          "internal review update"
+      ],
+      "symptoms": [],
+      "intent": [
+          "Template"
+      ],
+      "customerQuestions": [],
+      "quickChecks": [
+          "Check the actual escalation status before sending."
+      ],
+      "quickSteps": [
+          "Check internal escalation status.",
+          "Customize the reply with real status info.",
+          "Send the update."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Escalation Update — Reply",
+              "text": "This needs an internal review now. I've documented the device, network, exact error, and the steps already tested, so the next team has a complete handoff instead of starting over. I'll update you as soon as I have a response from the reviewing team."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "reply-waiting-for-customer-info",
+          "reply-resolved-closing"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-waiting-for-customer-info",
+      "title": "Waiting for Customer Info Reply",
+      "category": "reply-templates",
+      "secondaryCategories": [],
+      "priority": "normal",
+      "tags": [
+          "reply-templates",
+          "batch12"
+      ],
+      "keywords": [
+          "waiting",
+          "customer info",
+          "follow up",
+          "pending",
+          "template"
+      ],
+      "customerPhrases": [],
+      "preview": {
+          "problem": "Waiting for the customer to provide requested information.",
+          "firstQuestion": "N/A — this is a follow-up nudge.",
+          "firstAction": "Send a polite follow-up reminder.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this when you're waiting for the customer to reply with requested info and need to send a follow-up.",
+      "useWhen": "Use as a follow-up when the customer hasn't responded with requested information.",
+      "aliases": [
+          "waiting for info reply",
+          "follow up nudge",
+          "pending info reply"
+      ],
+      "symptoms": [],
+      "intent": [
+          "Template"
+      ],
+      "customerQuestions": [],
+      "quickChecks": [
+          "Check if the customer already replied in another channel."
+      ],
+      "quickSteps": [
+          "Confirm no response has been received.",
+          "Send the follow-up below.",
+          "Set appropriate SLA timer."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Waiting for Customer Info — Follow-Up",
+              "text": "Just checking in — I still need [specific info requested] to move forward with your case. Whenever you have a chance, please send that over and I'll pick this right back up. If anything has changed or the issue resolved itself, just let me know and I'll close this out."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "reply-resolved-closing",
+          "reply-starter-general-troubleshooting"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-resolved-closing",
+      "title": "Resolved / Closing Reply",
+      "category": "reply-templates",
+      "secondaryCategories": [],
+      "priority": "normal",
+      "tags": [
+          "reply-templates",
+          "batch12"
+      ],
+      "keywords": [
+          "resolved",
+          "closing",
+          "solved",
+          "done",
+          "template"
+      ],
+      "customerPhrases": [
+          "fixed",
+          "working now",
+          "thank you"
+      ],
+      "preview": {
+          "problem": "Issue is resolved — send a clean closing reply.",
+          "firstQuestion": "N/A — issue resolved.",
+          "firstAction": "Confirm resolution and close.",
+          "escalateIf": "N/A — this is a reply template."
+      },
+      "quickAnswer": "Use this when the customer's issue is resolved and you're closing the ticket.",
+      "useWhen": "Use as the closing reply after confirming the issue is resolved.",
+      "aliases": [
+          "resolved reply",
+          "closing reply",
+          "ticket closing",
+          "solved reply"
+      ],
+      "symptoms": [],
+      "intent": [
+          "Template"
+      ],
+      "customerQuestions": [],
+      "quickChecks": [
+          "Confirm the issue is actually resolved before closing."
+      ],
+      "quickSteps": [
+          "Verify the customer confirmed resolution.",
+          "Send the closing reply.",
+          "Set ticket to Solved."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Resolved / Closing — Reply",
+              "text": "Glad we got this sorted! If everything is working as expected, I'll close this out. If anything comes up again or you need help with anything else, don't hesitate to reach out — we're here for you."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "reply-waiting-for-customer-info"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "reply-angry-customer-de-escalation",
+      "title": "Angry Customer De-escalation Reply",
+      "category": "reply-templates",
+      "secondaryCategories": [
+          "escalations"
+      ],
+      "priority": "critical",
+      "tags": [
+          "reply-templates",
+          "escalations",
+          "batch12"
+      ],
+      "keywords": [
+          "angry",
+          "frustrated",
+          "de-escalation",
+          "upset",
+          "supervisor",
+          "template"
+      ],
+      "customerPhrases": [
+          "this is unacceptable",
+          "I want a supervisor",
+          "worst service",
+          "cancel my account"
+      ],
+      "preview": {
+          "problem": "Customer is angry or frustrated — need a de-escalation reply.",
+          "firstQuestion": "N/A — acknowledge first, then troubleshoot.",
+          "firstAction": "Lead with empathy, skip cheerful tone.",
+          "escalateIf": "Customer requests supervisor or is abusive."
+      },
+      "quickAnswer": "Use this when a customer is visibly angry, frustrated, or demanding a supervisor. Lead with empathy, skip cheerful tone, and acknowledge their specific frustration.",
+      "useWhen": "Use when customer is angry, frustrated, demanding supervisor, or threatening to cancel.",
+      "aliases": [
+          "angry customer reply",
+          "de-escalation reply",
+          "frustrated customer reply"
+      ],
+      "symptoms": [
+          "customer angry",
+          "customer frustrated",
+          "supervisor request"
+      ],
+      "intent": [
+          "Template",
+          "Escalate"
+      ],
+      "customerQuestions": [],
+      "quickChecks": [
+          "Do NOT use cheerful punctuation with angry customers.",
+          "Do NOT repeat basic steps they already tried.",
+          "Acknowledge their specific pain point."
+      ],
+      "quickSteps": [
+          "Read their complaint carefully — identify the specific pain point.",
+          "Lead with empathy, not apology filler.",
+          "Skip steps they already tried.",
+          "Send the reply below, customized to their specific issue."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Angry Customer — De-escalation Reply",
+              "text": "I understand why this is frustrating, especially since you've already tried basic troubleshooting. I won't repeat the same steps without a reason. I'm going to check the line status first, then we'll only test the next step that actually narrows this down."
+          }
+      ],
+      "escalationRequiredWhen": [
+          "Customer requests supervisor/manager.",
+          "Customer is abusive or threatening.",
+          "Issue requires exception, credit, or policy review."
+      ],
+      "relatedPlaybooks": [
+          "reply-escalation-update",
+          "reply-billing-refund-safe-language"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "pattern-tracking-known-issue-logging",
+      "title": "Pattern Tracking & Known Issue Logging",
+      "category": "known-issues",
+      "secondaryCategories": [
+          "zendesk-ops"
+      ],
+      "priority": "critical",
+      "tags": [
+          "known-issues",
+          "zendesk-ops",
+          "batch12"
+      ],
+      "keywords": [
+          "pattern",
+          "tracking",
+          "known issue",
+          "logging",
+          "repeated",
+          "bug",
+          "incident"
+      ],
+      "customerPhrases": [
+          "same issue",
+          "happening to others",
+          "known issue",
+          "outage",
+          "widespread"
+      ],
+      "preview": {
+          "problem": "Agents may see repeated cases but fail to log the shared pattern.",
+          "firstQuestion": "Have I seen this exact symptom more than once recently?",
+          "firstAction": "Check if affected customers share network, device, OS, or error.",
+          "escalateIf": "Three or more similar independent cases in a short window."
+      },
+      "quickAnswer": "Use this playbook when you notice repeated similar cases. Pattern tracking helps Engineering/NOC/Product find real issues faster.",
+      "useWhen": "Use when you see repeated similar cases and need to determine if it's a pattern, bug, or incident candidate.",
+      "doNotUseWhen": "Do not tell the customer 'known issue' unless officially confirmed.",
+      "aliases": [
+          "pattern tracking",
+          "known issue logging",
+          "bug candidate",
+          "incident tracking"
+      ],
+      "symptoms": [
+          "repeated issue",
+          "multiple similar cases",
+          "same error across customers"
+      ],
+      "intent": [
+          "Escalate",
+          "Template"
+      ],
+      "customerQuestions": [
+          "Have I seen this exact symptom more than once recently?",
+          "Do affected customers share network, device, OS, app version, location, trigger, or error?",
+          "Is there official confirmation, or only early signal?"
+      ],
+      "quickChecks": [
+          "One-off: One case only. Do not call it a pattern.",
+          "Possible pattern: Two similar cases. Monitor and tag.",
+          "Repeated pattern: Three or more similar independent cases. Log and escalate.",
+          "Bug candidate: Multiple cases with clear reproduction steps.",
+          "Incident candidate: Sudden high volume of identical cases."
+      ],
+      "quickSteps": [
+          "Capture the exact symptom wording.",
+          "Capture shared dimensions: Network, Feature, Device, OS/app version, Trigger, Error, Location/ZIP, Time window.",
+          "Tag/field the ticket consistently.",
+          "Add a short internal pattern note.",
+          "Do not tell the customer 'known issue' unless officially confirmed.",
+          "If threshold is met, escalate as bug/pattern candidate."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Customer Reply — Not Confirmed",
+              "text": "I can't confirm this as a widespread issue yet, but I'm checking your report against other live cases and our status sources. I'll troubleshoot your line directly while we watch for any broader pattern."
+          },
+          {
+              "label": "Customer Reply — Confirmed Internal Issue",
+              "text": "We're aware of an issue affecting this service, and the team is already working on it. I'll keep your ticket linked to the investigation and update you when there's a confirmed fix or next step."
+          }
+      ],
+      "zendeskNote": "Pattern signal: [Possible / Repeated / Bug candidate / Incident candidate]\nFeature/network: [X]\nDevice/OS/app version: [X]\nSymptom: [Exact wording/error]\nTrigger: [Activation / port / Teleport / app update / renewal / sudden]\nCase count: [X] in [time window]\nShared factors: [Network/device/location/version/etc.]\nEvidence: [Ticket IDs/screenshots/repro steps/status source]\nConfidence: [Low / Medium / High]\nAction: [Monitor / tag / escalate / link to incident]",
+      "escalation": {
+          "neededWhen": [
+              "Three or more similar independent cases in a short window.",
+              "Five or more reproducible app/feature cases.",
+              "Ten or more identical cases arrive quickly.",
+              "Multiple customers in same ZIP/network report sudden SOS/no service.",
+              "Billing/payment/login/activation flow breaks across app and web."
+          ],
+          "evidenceNeeded": [
+              "Ticket IDs",
+              "Screenshots",
+              "Repro steps",
+              "Time window"
+          ],
+          "summaryTemplate": "Pattern/bug candidate. Feature: [X]. Network: [X]. Platform/device: [X]. Exact symptom/error: [X]. Cases seen: [X] over [time]. Repro steps: [X]. Customer impact: [X]. Evidence: [ticket IDs/screenshots]. Confidence: [Low/Medium/High]. Requesting triage/confirmation."
+      },
+      "escalationRequiredWhen": [
+          "Three or more similar independent cases in a short window.",
+          "Five or more reproducible app/feature cases.",
+          "Sudden high volume of identical cases."
+      ],
+      "relatedPlaybooks": [
+          "known-issue-pattern-log-template",
+          "known-issue-bug-candidate-template"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "known-issue-pattern-log-template",
+      "title": "Known Issue / Pattern Log Template",
+      "category": "known-issues",
+      "secondaryCategories": [
+          "zendesk-ops"
+      ],
+      "priority": "important",
+      "tags": [
+          "known-issues",
+          "batch12"
+      ],
+      "keywords": [
+          "pattern log",
+          "template",
+          "tracker",
+          "log"
+      ],
+      "customerPhrases": [],
+      "preview": {
+          "problem": "Need a structured template to log a potential pattern.",
+          "firstQuestion": "N/A — this is a logging template.",
+          "firstAction": "Copy the template and fill in the fields.",
+          "escalateIf": "Pattern reaches 3+ cases."
+      },
+      "quickAnswer": "Use this template to log a potential pattern or known issue in your tracker.",
+      "useWhen": "Use when you identify a potential pattern and need to log it consistently.",
+      "aliases": [
+          "pattern log template",
+          "known issue log",
+          "tracker template"
+      ],
+      "symptoms": [],
+      "intent": [
+          "Template"
+      ],
+      "customerQuestions": [],
+      "quickChecks": [
+          "Fill every field — incomplete logs lose signal."
+      ],
+      "quickSteps": [
+          "Copy the template below.",
+          "Fill in all fields with specific data.",
+          "Add to your pattern tracker."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Pattern / Known Issue Log Template",
+              "text": "Date: [YYYY-MM-DD]\nTicket ID: [X]\nNetwork: [Warp / Dark Star / Light Speed]\nFeature: [Data / Voice / SMS / Port / eSIM / App / Billing]\nDevice/OS: [X]\nExact Symptom: [X]\nExact Error: [X]\nTrigger: [Activation / Port / Teleport / Update / Renewal / Sudden]\nLocation/ZIP: [X]\nTime Window: [X]\nResolution: [Resolved / Escalated / Monitoring]\nConfidence: [One-off / Possible / Repeated / Bug / Incident]"
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "pattern-tracking-known-issue-logging",
+          "known-issue-bug-candidate-template"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "known-issue-bug-candidate-template",
+      "title": "Bug Candidate Template",
+      "category": "known-issues",
+      "secondaryCategories": [],
+      "priority": "important",
+      "tags": [
+          "known-issues",
+          "batch12"
+      ],
+      "keywords": [
+          "bug",
+          "candidate",
+          "template",
+          "reproduction"
+      ],
+      "customerPhrases": [],
+      "preview": {
+          "problem": "Need to document a bug candidate with reproduction steps.",
+          "firstQuestion": "N/A — this is a documentation template.",
+          "firstAction": "Copy the template and fill in repro steps.",
+          "escalateIf": "Bug is confirmed reproducible."
+      },
+      "quickAnswer": "Use this template when you have multiple cases with clear reproduction steps that suggest a software bug.",
+      "useWhen": "Use when you have a reproducible issue across multiple cases and need to document it as a bug candidate.",
+      "aliases": [
+          "bug candidate template",
+          "bug report template"
+      ],
+      "symptoms": [],
+      "intent": [
+          "Template",
+          "Escalate"
+      ],
+      "customerQuestions": [],
+      "quickChecks": [
+          "Confirm reproduction steps work consistently.",
+          "Attach evidence."
+      ],
+      "quickSteps": [
+          "Verify the bug is reproducible.",
+          "Copy the template below.",
+          "Fill in all fields including exact repro steps.",
+          "Submit for triage."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Bug Candidate Template",
+              "text": "BUG CANDIDATE\n\nFeature: [X]\nNetwork: [X]\nPlatform: [App / Web / Both]\nDevice/OS: [X]\nExact Error: [X]\nReproduction Steps:\n1. [Step 1]\n2. [Step 2]\n3. [Step 3]\nExpected Result: [X]\nActual Result: [X]\nCase Count: [X] cases over [time window]\nTicket IDs: [X, X, X]\nScreenshots/Evidence: [Attached]\nConfidence: [Medium / High]\nCustomer Impact: [X]"
+          }
+      ],
+      "escalationRequiredWhen": [
+          "Bug is confirmed reproducible across multiple cases."
+      ],
+      "relatedPlaybooks": [
+          "pattern-tracking-known-issue-logging",
+          "known-issue-incident-candidate-template"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "known-issue-incident-candidate-template",
+      "title": "Incident Candidate Template",
+      "category": "known-issues",
+      "secondaryCategories": [],
+      "priority": "critical",
+      "tags": [
+          "known-issues",
+          "batch12"
+      ],
+      "keywords": [
+          "incident",
+          "candidate",
+          "template",
+          "outage",
+          "mass"
+      ],
+      "customerPhrases": [],
+      "preview": {
+          "problem": "Sudden high volume of identical cases suggests an incident.",
+          "firstQuestion": "N/A — this is an incident documentation template.",
+          "firstAction": "Copy the template and fill in incident details.",
+          "escalateIf": "Immediately — incidents require urgent triage."
+      },
+      "quickAnswer": "Use this template when you see a sudden spike of identical cases that suggests a service incident or outage.",
+      "useWhen": "Use when 10+ identical cases arrive quickly with shared network/feature/location/time.",
+      "aliases": [
+          "incident candidate template",
+          "outage template",
+          "incident report"
+      ],
+      "symptoms": [],
+      "intent": [
+          "Template",
+          "Escalate"
+      ],
+      "customerQuestions": [],
+      "quickChecks": [
+          "Verify case volume.",
+          "Confirm shared factors.",
+          "Escalate immediately."
+      ],
+      "quickSteps": [
+          "Confirm the volume spike.",
+          "Copy the template below.",
+          "Fill in all fields.",
+          "Escalate immediately."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Incident Candidate Template",
+              "text": "INCIDENT CANDIDATE — URGENT\n\nFirst Detected: [Date/Time]\nFeature Affected: [X]\nNetwork: [X]\nScope: [Region / Nationwide / Specific ZIP codes]\nCase Volume: [X] cases in [X] minutes/hours\nExact Symptom: [X]\nShared Factors: [Network/Device/OS/Location/Trigger]\nTicket IDs: [X, X, X, ...]\nCustomer Impact: [No service / Data down / App broken / Billing failed]\nStatus Sources Checked: [Internal status page / NOC / Team chat]\nRecommended Action: [Triage / NOC alert / Incident commander]\nAgent: [Your name]"
+          }
+      ],
+      "escalationRequiredWhen": [
+          "10+ identical cases arrive quickly.",
+          "Multiple customers in same area report sudden outage.",
+          "Critical service flow breaks across platforms."
+      ],
+      "relatedPlaybooks": [
+          "pattern-tracking-known-issue-logging",
+          "known-issue-bug-candidate-template"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "known-issue-current-empty-state",
+      "title": "Current Known Issues — Status",
+      "category": "known-issues",
+      "secondaryCategories": [],
+      "priority": "normal",
+      "tags": [
+          "known-issues",
+          "batch12"
+      ],
+      "keywords": [
+          "current",
+          "known issues",
+          "active",
+          "status",
+          "outage"
+      ],
+      "customerPhrases": [
+          "is there an outage",
+          "is this a known issue",
+          "are others affected"
+      ],
+      "preview": {
+          "problem": "Check for current confirmed known issues.",
+          "firstQuestion": "N/A — check internal status.",
+          "firstAction": "Review this card for any confirmed active issues.",
+          "escalateIf": "New incident detected — use Incident Candidate Template."
+      },
+      "quickAnswer": "No confirmed active known issues logged.\n\nIf you suspect a pattern, use the Pattern Tracking playbook to log and monitor it. Do not tell customers there is a known issue unless officially confirmed.",
+      "useWhen": "Check this card to see if there are any confirmed active known issues before telling a customer.",
+      "doNotUseWhen": "Do not tell customers 'there is a known issue' based on this card alone — only if an issue is listed as confirmed below.",
+      "aliases": [
+          "current known issues",
+          "active issues",
+          "outage status"
+      ],
+      "symptoms": [],
+      "intent": [
+          "Glossary",
+          "Explain"
+      ],
+      "customerQuestions": [],
+      "quickChecks": [
+          "No confirmed active known issues logged.",
+          "If you suspect a new pattern, use Pattern Tracking.",
+          "Do not claim 'known issue' to customers without confirmation."
+      ],
+      "quickSteps": [
+          "Check this card for confirmed issues.",
+          "If no issues listed, tell the customer you're checking but cannot confirm a widespread issue.",
+          "If you see a new pattern, log it using the Pattern Log Template."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Customer Reply — No Confirmed Issues",
+              "text": "I've checked our internal status and there are no confirmed widespread issues at this time. I'll continue troubleshooting your specific case directly."
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "pattern-tracking-known-issue-logging",
+          "known-issue-pattern-log-template"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "known-issue-what-not-to-say",
+      "title": "What Not To Say Until Confirmed",
+      "category": "known-issues",
+      "secondaryCategories": [],
+      "priority": "critical",
+      "tags": [
+          "known-issues",
+          "batch12"
+      ],
+      "keywords": [
+          "what not to say",
+          "safe language",
+          "known issue",
+          "outage",
+          "confirmed"
+      ],
+      "customerPhrases": [],
+      "preview": {
+          "problem": "Agents may overclaim a known issue from too little evidence.",
+          "firstQuestion": "Is this officially confirmed?",
+          "firstAction": "Review safe vs. unsafe language below.",
+          "escalateIf": "N/A — this is a language guide."
+      },
+      "quickAnswer": "Never tell a customer there is a 'known issue' or 'outage' unless it is officially confirmed. Use safe language instead.",
+      "useWhen": "Review this before replying to any customer who asks if there's a known issue or outage.",
+      "doNotUseWhen": "N/A — always review safe language rules.",
+      "aliases": [
+          "what not to say",
+          "safe language guide",
+          "known issue language"
+      ],
+      "symptoms": [],
+      "intent": [
+          "Glossary",
+          "Template"
+      ],
+      "customerQuestions": [],
+      "quickChecks": [
+          "NEVER say: 'There is a known outage.'",
+          "NEVER say: 'This is affecting everyone.'",
+          "NEVER say: 'The network is down.'",
+          "NEVER say: 'We know about this issue.'",
+          "SAFE: 'I'm checking your report against our current status.'",
+          "SAFE: 'I'll troubleshoot your line directly while monitoring.'"
+      ],
+      "quickSteps": [
+          "Check internal status sources before making any claims.",
+          "If not confirmed, use safe language from the templates below.",
+          "If confirmed, use the official confirmed issue reply."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Safe Reply — Not Confirmed",
+              "text": "I can't confirm this as a widespread issue yet, but I'm checking your report against other live cases and our status sources. I'll troubleshoot your line directly while we watch for any broader pattern."
+          },
+          {
+              "label": "Unsafe Phrases — DO NOT USE",
+              "text": "❌ 'There is a known outage'\n❌ 'This is affecting everyone'\n❌ 'The network is down'\n❌ 'We know about this issue'\n❌ 'It should be fixed within [time]'\n\n✅ Use: 'I'm checking against our current status'\n✅ Use: 'I'll troubleshoot your line directly'\n✅ Use: 'I can't confirm a widespread issue yet'"
+          }
+      ],
+      "escalationRequiredWhen": [],
+      "relatedPlaybooks": [
+          "pattern-tracking-known-issue-logging",
+          "known-issue-current-empty-state"
+      ],
+      "confidence": "verified",
+      "batch": "batch12"
+  },
+  {
+      "id": "app-dashboard-bug-troubleshooting",
+      "title": "App & Dashboard Bug Troubleshooting",
+      "category": "app-dashboard",
+      "secondaryCategories": [
+          "activation",
+          "esim-sim",
+          "port-in-out",
+          "plans-billing",
+          "international-roaming",
+          "devices-watches",
+          "escalations"
+      ],
+      "priority": "important",
+      "tags": [
+          "app-dashboard",
+          "batch10"
+      ],
+      "keywords": [
+          "app bug",
+          "dashboard bug",
+          "app crashing",
+          "dashboard won't load",
+          "something went wrong",
+          "try again later",
+          "button not working",
+          "page stuck",
+          "cannot click",
+          "login issue",
+          "app cache",
+          "web dashboard"
+      ],
+      "customerPhrases": [
+          "app crashing",
+          "dashboard won't load",
+          "something went wrong",
+          "try again later",
+          "button not working",
+          "page stuck"
+      ],
+      "preview": {
+          "problem": "Customer reports app or dashboard bug, login issue, or crash.",
+          "firstQuestion": "Are you using the mobile app or the web dashboard?",
+          "firstAction": "Isolate whether it is the app or account/dashboard.",
+          "escalateIf": "Critical self-service flow fails on both app and web."
+      },
+      "quickAnswer": "Troubleshooting guide for app crashes, dashboard loading issues, and login problems. Always verify if the issue happens on both the mobile app and the web dashboard.",
+      "useWhen": "Use when a customer reports an app bug, dashboard error, login issue, or a 'something went wrong' message.",
+      "aliases": [
+          "app bug",
+          "dashboard bug",
+          "login issue",
+          "app crashing",
+          "dashboard won't load"
+      ],
+      "symptoms": [
+          "app crashing",
+          "dashboard won't load",
+          "button not working",
+          "login issue"
+      ],
+      "intent": [
+          "Troubleshoot"
+      ],
+      "customerQuestions": [
+          "Are you using the mobile app or the web dashboard?",
+          "What exact error message do you see?",
+          "Does the same issue happen if you try the website from a browser?"
+      ],
+      "quickChecks": [
+          "Ask app version, OS version, and device model.",
+          "Force-close app, update app, log out/in.",
+          "Try web dashboard to check app-vs-web parity.",
+          "Turn off VPN, Private Relay, ad blocker, or Private DNS for testing.",
+          "Check whether there is a known platform issue or account lock. INTERNAL VERIFICATION REQUIRED"
+      ],
+      "quickSteps": [
+          "Capture exact error text and screenshot if available.",
+          "Ask what action the customer was trying to complete.",
+          "Have customer force-close app and reopen.",
+          "Have customer update the app from App Store/Play Store.",
+          "Log out and log back in.",
+          "If Android, clear US Mobile app cache.",
+          "If iPhone, turn off iCloud Private Relay/VPN temporarily.",
+          "Ask customer to try the same action on the web dashboard.",
+          "If web works but app fails, document as app-specific bug candidate.",
+          "If both app and web fail, check account/API/platform status internally. INTERNAL VERIFICATION REQUIRED",
+          "If login/account locked/2FA issue appears, use secure account verification flow. INTERNAL VERIFICATION REQUIRED"
+      ],
+      "steps": [],
+      "deviceSpecificSteps": {
+          "iphone": [
+              "Force-close app and reopen.",
+              "Update app from App Store.",
+              "Turn off VPN/iCloud Private Relay temporarily.",
+              "Try Safari or desktop browser.",
+              "Capture screenshot of exact error."
+          ],
+          "android": [
+              "Force-close app.",
+              "Update app from Play Store.",
+              "Settings > Apps > US Mobile > Storage > Clear Cache.",
+              "Turn off VPN/Private DNS temporarily.",
+              "Try Chrome or desktop browser."
+          ]
+      },
+      "copyTemplates": [
+          {
+              "label": "App & Dashboard Bug — First Reply",
+              "text": "That error may be an app session or cache issue, so let's isolate whether it's the app or the account/dashboard. Please force-close the app, check for an update, log back in, and try again. If it still fails, please try the same action from the web dashboard. Tell me whether it fails in both places or only in the app."
+          }
+      ],
+      "zendeskNote": "Issue: App/dashboard bug or login issue\nPlatform: [iOS app / Android app / Web / Both]\nApp version: [X]\nDevice/OS: [X]\nFlow attempted: [Activation / payment / top-up / eSIM / plan change / other]\nError: [Exact error]\nSteps tried: App updated, cache/session cleared, VPN/Private Relay off, web parity tested\nInternal checks: Account lock, known API/platform issue, 2FA/login status INTERNAL VERIFICATION REQUIRED\nResult: [Works on web / fails both / reproducible bug / pending]",
+      "escalationRequiredWhen": [
+          "Critical self-service flow fails on both app and web.",
+          "Payment, activation, eSIM install, login, or porting flow is blocked.",
+          "Multiple users report same app/dashboard bug.",
+          "Exact reproducible steps are available.",
+          "Account appears locked or 2FA cannot be completed."
+      ],
+      "relatedPlaybooks": [
+          "autopay-payment-failures-taxes",
+          "app-activate-new-line-transfer",
+          "app-install-esim-download-apn",
+          "app-dashboard-contact-carrier-errors"
+      ],
+      "confidence": "verified",
+      "batch": "batch10"
+  },
+  {
+      "id": "app-activate-new-line-transfer",
+      "title": "Activate a New Line & Transfer Number In",
+      "category": "app-dashboard",
+      "secondaryCategories": [
+          "activation",
+          "port-in-out"
+      ],
+      "priority": "important",
+      "tags": [
+          "app-dashboard",
+          "activation",
+          "port-in-out",
+          "batch10"
+      ],
+      "keywords": [
+          "activate",
+          "new line",
+          "transfer",
+          "number",
+          "port in",
+          "dashboard",
+          "app"
+      ],
+      "customerPhrases": [
+          "activate new line",
+          "add a line",
+          "transfer my number",
+          "port in from app"
+      ],
+      "preview": {
+          "problem": "Customer needs to activate a new line or transfer a number using the app/dashboard.",
+          "firstQuestion": "Are you activating a new number or transferring an existing number?",
+          "firstAction": "Guide through the correct app/dashboard flow.",
+          "escalateIf": "Activation fails on both app and web after correct steps."
+      },
+      "quickAnswer": "Guide for activating a new line or transferring (porting) an existing number through the US Mobile app or web dashboard.",
+      "useWhen": "Use when a customer wants to activate a new line or port-in through the app or dashboard.",
+      "aliases": [
+          "activate line",
+          "add line",
+          "transfer number in",
+          "port in app"
+      ],
+      "symptoms": [
+          "can't activate",
+          "activation stuck",
+          "port in from app"
+      ],
+      "intent": [
+          "Explain",
+          "Fix"
+      ],
+      "customerQuestions": [
+          "Are you activating a new number or transferring an existing one?",
+          "Are you using the mobile app or web dashboard?",
+          "Do you have your account number and PIN from your current carrier?"
+      ],
+      "quickChecks": [
+          "Confirm new number vs. transfer.",
+          "Confirm app vs. web.",
+          "For transfers, ensure carrier info is ready."
+      ],
+      "quickSteps": [
+          "Log into the US Mobile app or dashboard.",
+          "For new number: Tap 'Add Line' or 'Activate' and follow the prompts.",
+          "For transfer/port-in: Select 'Transfer Number,' enter carrier account number, PIN, and billing ZIP.",
+          "Choose your plan and complete checkout.",
+          "For eSIM: Download and activate the eSIM profile.",
+          "For physical SIM: Insert the SIM card and restart."
+      ],
+      "steps": [],
+      "deviceSpecificSteps": {
+          "iphone": [
+              "Settings > Cellular > Add eSIM if prompted.",
+              "Restart after activation."
+          ],
+          "android": [
+              "Settings > Connections > SIM Manager if prompted.",
+              "Restart after activation."
+          ]
+      },
+      "copyTemplates": [
+          {
+              "label": "Activate New Line — Reply",
+              "text": "To activate a new line, log into the US Mobile app or web dashboard, tap 'Add Line' or 'Activate,' choose your plan, and follow the prompts. If you're using an eSIM, the download will start automatically. For a physical SIM, insert it and restart your phone."
+          },
+          {
+              "label": "Transfer Number In — Reply",
+              "text": "To transfer your existing number, you'll need your current carrier's account number and transfer PIN. Log into the app or dashboard, select 'Transfer Number,' enter those details along with your billing ZIP, and we'll start the port. Most transfers complete within a few hours."
+          }
+      ],
+      "escalationRequiredWhen": [
+          "Activation fails on both app and web after correct steps."
+      ],
+      "relatedPlaybooks": [
+          "app-dashboard-bug-troubleshooting",
+          "port-in-troubleshooting"
+      ],
+      "confidence": "verified",
+      "batch": "batch10"
+  },
+  {
+      "id": "app-install-esim-download-apn",
+      "title": "Install eSIM & Download APN",
+      "category": "app-dashboard",
+      "secondaryCategories": [
+          "esim-sim",
+          "apn-data"
+      ],
+      "priority": "important",
+      "tags": [
+          "app-dashboard",
+          "esim-sim",
+          "apn-data",
+          "batch10"
+      ],
+      "keywords": [
+          "install",
+          "esim",
+          "download",
+          "apn",
+          "qr code",
+          "dashboard",
+          "app"
+      ],
+      "customerPhrases": [
+          "install esim",
+          "download esim",
+          "apn settings",
+          "qr code",
+          "esim from app"
+      ],
+      "preview": {
+          "problem": "Customer needs to install eSIM or download APN settings through the app.",
+          "firstQuestion": "Are you installing a new eSIM or re-downloading an existing one?",
+          "firstAction": "Guide through eSIM install and APN configuration.",
+          "escalateIf": "eSIM download fails repeatedly after correct steps."
+      },
+      "quickAnswer": "Guide for installing an eSIM and configuring APN settings through the US Mobile app or web dashboard.",
+      "useWhen": "Use when a customer needs help installing an eSIM or configuring APN settings via the app/dashboard.",
+      "aliases": [
+          "install esim app",
+          "download apn",
+          "esim qr code",
+          "apn configuration"
+      ],
+      "symptoms": [
+          "esim won't install",
+          "apn not working",
+          "qr code won't scan"
+      ],
+      "intent": [
+          "Fix",
+          "Explain"
+      ],
+      "customerQuestions": [
+          "Are you installing a new eSIM or re-downloading?",
+          "What device are you using?",
+          "Are you connected to Wi-Fi?"
+      ],
+      "quickChecks": [
+          "Confirm device supports eSIM.",
+          "Confirm Wi-Fi connection for download.",
+          "Confirm no existing eSIM conflict."
+      ],
+      "quickSteps": [
+          "Connect to Wi-Fi.",
+          "Log into the US Mobile app or dashboard.",
+          "Go to your line > eSIM > Download or Install.",
+          "Scan the QR code or install directly from the app.",
+          "After install, go to Settings > Cellular > select the US Mobile line.",
+          "If data doesn't work, check APN settings under Cellular > Cellular Data Options."
+      ],
+      "steps": [],
+      "deviceSpecificSteps": {
+          "iphone": [
+              "Settings > Cellular > Add eSIM > scan QR code.",
+              "If data fails: Settings > Cellular > Cellular Data Network > APN."
+          ],
+          "android": [
+              "Settings > Connections > SIM Manager > Add eSIM.",
+              "If data fails: Settings > Connections > Mobile Networks > Access Point Names."
+          ]
+      },
+      "copyTemplates": [
+          {
+              "label": "eSIM Install — Reply",
+              "text": "To install your eSIM, make sure you're on Wi-Fi, then open the US Mobile app, go to your line, and tap 'Install eSIM.' If you have a QR code, scan it from Settings > Cellular > Add eSIM (iPhone) or Settings > SIM Manager (Android). If data doesn't work right after install, I can help you verify the APN settings."
+          }
+      ],
+      "escalationRequiredWhen": [
+          "eSIM download fails repeatedly after correct steps."
+      ],
+      "relatedPlaybooks": [
+          "app-dashboard-bug-troubleshooting",
+          "esim-activation-troubleshooting",
+          "apn-data-troubleshooting"
+      ],
+      "confidence": "verified",
+      "batch": "batch10"
+  },
+  {
+      "id": "app-switch-networks-teleport-transfer",
+      "title": "Switch Networks / Teleport & Transfer to New Device",
+      "category": "app-dashboard",
+      "secondaryCategories": [
+          "network-signal",
+          "devices-watches"
+      ],
+      "priority": "important",
+      "tags": [
+          "app-dashboard",
+          "network-signal",
+          "devices-watches",
+          "batch10"
+      ],
+      "keywords": [
+          "switch",
+          "network",
+          "teleport",
+          "transfer",
+          "device",
+          "new phone",
+          "dashboard",
+          "app"
+      ],
+      "customerPhrases": [
+          "switch network",
+          "teleport",
+          "new phone",
+          "transfer to new device",
+          "change carrier"
+      ],
+      "preview": {
+          "problem": "Customer needs to switch networks (Teleport) or transfer service to a new device.",
+          "firstQuestion": "Are you switching networks or moving to a new device?",
+          "firstAction": "Confirm the action and guide through the dashboard flow.",
+          "escalateIf": "Teleport or device transfer fails on both app and web."
+      },
+      "quickAnswer": "Guide for switching networks (Teleport) or transferring service to a new device through the US Mobile app or dashboard.",
+      "useWhen": "Use when a customer wants to switch networks (Teleport) or transfer their line to a new device.",
+      "aliases": [
+          "switch network",
+          "teleport",
+          "transfer device",
+          "new phone setup"
+      ],
+      "symptoms": [
+          "teleport stuck",
+          "can't switch network",
+          "new device no service"
+      ],
+      "intent": [
+          "Explain",
+          "Fix"
+      ],
+      "customerQuestions": [
+          "Are you switching networks (Teleport) or moving to a new device?",
+          "What is your current and new device?",
+          "Are you using physical SIM or eSIM?"
+      ],
+      "quickChecks": [
+          "Confirm new device compatibility.",
+          "Confirm SIM type needed.",
+          "Check for pending port or activation."
+      ],
+      "quickSteps": [
+          "Log into the US Mobile app or dashboard.",
+          "For Teleport: Go to your line > Network > Switch Network.",
+          "For device transfer: Go to your line > Device > Transfer to New Device.",
+          "Follow the prompts to complete the transfer.",
+          "New eSIM may need to be downloaded on the new device.",
+          "Restart the new device after transfer."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Switch Networks / Teleport — Reply",
+              "text": "To switch networks, log into the app or dashboard, go to your line settings, and select 'Switch Network' or 'Teleport.' The process usually takes a few minutes. Your phone may restart during the switch — that's normal."
+          },
+          {
+              "label": "Transfer to New Device — Reply",
+              "text": "To move your line to a new device, log into the app or dashboard, go to your line, and select 'Transfer to New Device.' If you're switching from physical SIM to eSIM (or vice versa), the system will guide you through the right steps. Restart your new device after the transfer completes."
+          }
+      ],
+      "escalationRequiredWhen": [
+          "Teleport or device transfer fails on both app and web."
+      ],
+      "relatedPlaybooks": [
+          "app-dashboard-bug-troubleshooting",
+          "teleport-network-switch-issues"
+      ],
+      "confidence": "verified",
+      "batch": "batch10"
+  },
+  {
+      "id": "app-plan-billing-management",
+      "title": "Plan & Billing Management — Top-Up, Plan Change, Snooze, Usage, Payment",
+      "category": "app-dashboard",
+      "secondaryCategories": [
+          "plans-billing"
+      ],
+      "priority": "normal",
+      "tags": [
+          "app-dashboard",
+          "plans-billing",
+          "batch10"
+      ],
+      "keywords": [
+          "plan",
+          "billing",
+          "top-up",
+          "change plan",
+          "snooze",
+          "usage",
+          "payment",
+          "dashboard",
+          "app"
+      ],
+      "customerPhrases": [
+          "change my plan",
+          "top up",
+          "snooze my line",
+          "check usage",
+          "update payment",
+          "add data"
+      ],
+      "preview": {
+          "problem": "Customer needs to manage plan, billing, usage, or payment through the dashboard.",
+          "firstQuestion": "What are you trying to do — change plan, top-up, check usage, or update payment?",
+          "firstAction": "Guide to the correct dashboard section.",
+          "escalateIf": "Payment or plan change fails repeatedly."
+      },
+      "quickAnswer": "Guide for managing plans, top-ups, line snooze, usage tracking, and payment methods through the US Mobile app or dashboard.",
+      "useWhen": "Use when a customer needs help with plan changes, top-ups, usage, payments, or line snooze via the dashboard.",
+      "aliases": [
+          "change plan",
+          "top up",
+          "snooze line",
+          "check usage",
+          "update payment",
+          "billing management"
+      ],
+      "symptoms": [
+          "can't change plan",
+          "top-up failed",
+          "usage not showing",
+          "payment declined"
+      ],
+      "intent": [
+          "Explain",
+          "Fix"
+      ],
+      "customerQuestions": [
+          "What are you trying to do — change plan, top-up, check usage, or update payment?",
+          "Are you using the mobile app or web dashboard?"
+      ],
+      "quickChecks": [
+          "Confirm the specific action needed.",
+          "Check if there's a billing lock or past-due balance."
+      ],
+      "quickSteps": [
+          "Log into the US Mobile app or dashboard.",
+          "For plan change: Line > Plan > Change Plan.",
+          "For top-up: Line > Add Data / Top-Up.",
+          "For usage: Line > Usage / Data Usage.",
+          "For payment: Account > Payment Methods > Update.",
+          "For snooze: Line > Snooze Line (pauses service temporarily)."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Plan & Billing Management — Reply",
+              "text": "You can manage your plan and billing from the US Mobile app or web dashboard. Log in, go to your line settings, and you'll find options for changing your plan, adding data top-ups, checking usage, and updating payment methods. If you're having trouble with any specific action, let me know which one and I'll walk you through it."
+          }
+      ],
+      "escalationRequiredWhen": [
+          "Payment or plan change fails repeatedly on both app and web."
+      ],
+      "relatedPlaybooks": [
+          "app-dashboard-bug-troubleshooting",
+          "autopay-payment-failures-taxes"
+      ],
+      "confidence": "verified",
+      "batch": "batch10"
+  },
+  {
+      "id": "app-port-out-transfer-pin",
+      "title": "Port-Out Info & Transfer PIN",
+      "category": "app-dashboard",
+      "secondaryCategories": [
+          "port-in-out"
+      ],
+      "priority": "important",
+      "tags": [
+          "app-dashboard",
+          "port-in-out",
+          "batch10"
+      ],
+      "keywords": [
+          "port out",
+          "transfer pin",
+          "leave",
+          "switch carrier",
+          "account number",
+          "dashboard",
+          "app"
+      ],
+      "customerPhrases": [
+          "port out",
+          "transfer pin",
+          "leave us mobile",
+          "switch to another carrier",
+          "account number for port"
+      ],
+      "preview": {
+          "problem": "Customer needs port-out info or transfer PIN from the dashboard.",
+          "firstQuestion": "Are you looking for your account number and transfer PIN?",
+          "firstAction": "Guide to the dashboard location for port-out details.",
+          "escalateIf": "Transfer PIN is not generating or account number is missing."
+      },
+      "quickAnswer": "Guide for finding port-out information and transfer PIN through the US Mobile app or dashboard.",
+      "useWhen": "Use when a customer asks about porting out, transfer PIN, or account number for switching carriers.",
+      "aliases": [
+          "port out info",
+          "transfer pin",
+          "account number port",
+          "leave us mobile"
+      ],
+      "symptoms": [
+          "can't find transfer pin",
+          "port out stuck",
+          "need account number"
+      ],
+      "intent": [
+          "Explain"
+      ],
+      "customerQuestions": [
+          "Are you looking for your account number and transfer PIN?",
+          "Which carrier are you transferring to?"
+      ],
+      "quickChecks": [
+          "Do not try to retain — provide info promptly.",
+          "Confirm the customer has the right account."
+      ],
+      "quickSteps": [
+          "Log into the US Mobile app or dashboard.",
+          "Go to Account > Port-Out Info or Settings > Transfer PIN.",
+          "Copy the Account Number and Transfer PIN.",
+          "Provide these to the new carrier to start the port."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Port-Out Info — Reply",
+              "text": "You can find your port-out details in the US Mobile app or dashboard under Account > Port-Out Info (or Settings > Transfer PIN). You'll see your Account Number and Transfer PIN there. Give those to your new carrier and they'll handle the transfer from their end. The port usually completes within a few hours once submitted."
+          }
+      ],
+      "escalationRequiredWhen": [
+          "Transfer PIN is not generating or account number is missing from dashboard."
+      ],
+      "relatedPlaybooks": [
+          "app-dashboard-bug-troubleshooting",
+          "port-out-transfer-pin-security"
+      ],
+      "confidence": "verified",
+      "batch": "batch10"
+  },
+  {
+      "id": "app-manage-watch-enable-roaming",
+      "title": "Manage Watch & Enable Roaming",
+      "category": "app-dashboard",
+      "secondaryCategories": [
+          "devices-watches",
+          "international-roaming"
+      ],
+      "priority": "normal",
+      "tags": [
+          "app-dashboard",
+          "devices-watches",
+          "international-roaming",
+          "batch10"
+      ],
+      "keywords": [
+          "watch",
+          "smartwatch",
+          "roaming",
+          "international",
+          "enable",
+          "dashboard",
+          "app"
+      ],
+      "customerPhrases": [
+          "add watch",
+          "enable roaming",
+          "smartwatch setup",
+          "international roaming",
+          "watch not connecting"
+      ],
+      "preview": {
+          "problem": "Customer needs to manage a watch line or enable international roaming.",
+          "firstQuestion": "Are you setting up a watch or enabling roaming?",
+          "firstAction": "Guide to the correct dashboard section.",
+          "escalateIf": "Watch activation or roaming toggle fails."
+      },
+      "quickAnswer": "Guide for managing watch/smartwatch lines and enabling international roaming through the US Mobile app or dashboard.",
+      "useWhen": "Use when a customer needs help with watch setup, watch line management, or enabling international roaming.",
+      "aliases": [
+          "manage watch",
+          "enable roaming",
+          "smartwatch line",
+          "roaming toggle"
+      ],
+      "symptoms": [
+          "watch not connecting",
+          "roaming not working",
+          "can't enable roaming"
+      ],
+      "intent": [
+          "Explain",
+          "Fix"
+      ],
+      "customerQuestions": [
+          "Are you setting up a new watch or managing an existing watch line?",
+          "Which country are you traveling to?",
+          "Is your plan roaming-eligible?"
+      ],
+      "quickChecks": [
+          "Confirm watch compatibility.",
+          "Confirm roaming-eligible plan.",
+          "Check if roaming is toggled on."
+      ],
+      "quickSteps": [
+          "For watch: Log in > Devices > Add Watch or manage existing watch line.",
+          "For roaming: Log in > Line > Settings > International Roaming > Enable.",
+          "Confirm the plan includes roaming or add a roaming add-on.",
+          "Restart the device after enabling roaming."
+      ],
+      "steps": [],
+      "copyTemplates": [
+          {
+              "label": "Watch & Roaming — Reply",
+              "text": "For watch setup, log into the app or dashboard, go to Devices, and select 'Add Watch' to set up a new watch line. For international roaming, go to your line settings and toggle on 'International Roaming.' Make sure your plan includes roaming or add a roaming add-on before traveling. Restart your device after making changes."
+          }
+      ],
+      "escalationRequiredWhen": [
+          "Watch activation or roaming toggle fails on both app and web."
+      ],
+      "relatedPlaybooks": [
+          "app-dashboard-bug-troubleshooting"
+      ],
+      "confidence": "verified",
+      "batch": "batch10"
   }
 ];
